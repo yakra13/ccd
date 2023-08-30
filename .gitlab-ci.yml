@@ -1,0 +1,13 @@
+
+variables:
+  GROUP_ID: '5222'
+  JQR_NAME: 'CCD Basic JQR v1.0'
+  SERVICE_COMPONENT: 'airForce'
+  NON_CORE: 'false'
+  GITLAB_API_TOKEN: $GITLAB_API_TOKEN
+
+include:
+  - project: '90cos/cyt/mttl/application'
+    ref: main
+    file:
+      - '/packages/vjqr/src/assets/update-ci.yml'

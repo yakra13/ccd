@@ -1,0 +1,15 @@
+{
+    "sequence": {
+        "definitions-of-done": ["- [ ] Submit any changes to the sequence through the [JQR Viewer](https://training.90cos.cdl.af.mil/)"]
+    },
+    "unit": {
+        "definitions-of-done": ["- [ ] Submit any changes to the unit through the [JQR Viewer](https://training.90cos.cdl.af.mil/)"]
+    },
+    "module": {
+        "definitions-of-done": [
+            "- [ ] Document time spent on the Module (make a comment in the issue with /spend)",
+            "- [ ] Submit any changes to the module through the [JQR Viewer](https://training.90cos.cdl.af.mil/)",
+            "- [ ] Practical demonstration of **all** objectives in the module"
+        ]
+    }
+}
