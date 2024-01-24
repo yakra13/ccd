@@ -1,3 +1,4 @@
+// Imports for printing, accessing type max value defines, and math constants defines
 #include <stdio.h>
 #include <limits.h>
 #define _USE_MATH_DEFINES
@@ -5,6 +6,7 @@
 
 int main(void)
 {
+    // Declare AND initialize variables of various types.
     int integerType = INT_MAX;
     long longType = LONG_MAX;
     long long longlongType = LLONG_MAX;
@@ -14,6 +16,7 @@ int main(void)
     char charType = 'a';
     short shortType = SHRT_MAX;
 
+    // Print out the type, size in bytes, and current value for each type.
     printf("TYPE\tBytes\tValue\n");
     printf("int\t%zu\t%d\n", sizeof(integerType), integerType);
     printf("long\t%zu\t%ld\n", sizeof(longType), longType);
