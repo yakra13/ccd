@@ -1,5 +1,5 @@
 # Mentor/Apprentice Relationship Working Agreement
->**Intended use:** Mentors and Apprentices should use this to define and outline their expectations, relationship and other items typical in a working agreement. Prior to meeting, Mentors and Apprentices should review this file and come up with proposed changes. During the initial meeting between the mentor and Apprentice they will review and update this "template" working agreement to fit their particular style and desires. Further information on working agreements can be found in our squadron guidance [here](https://confluence.90cos.cdl.af.mil/display/9CMDP/%28U%29+Guidance+for+Creating+a+Team+Working+Agreement) or another example from GSA is [here](https://tech.gsa.gov/guides/agile_team_working_agreement/ "tech.gsa.gov/guides/agile_team_working_agreement").
+
 
 ## Purpose
 This Apprenticeship Agreement will govern our values, expectations, and processes.
@@ -33,43 +33,30 @@ In addition to the overall goals listed below the mentor will help the apprentic
 #### Mentorship Style
 > Select the appropriate mentorship style and delete the others.
 
-*Encouragement: The mentee is looking for that extra push to excel and step up their game; https://www.togetherplatform.com/blog/inspirational-mentoring-mentorship-that-matters*
-The primary focus will be on the mentee's successes, how they fit into the unit's mission, and how the mentee can maintain a big picture (operational) view while focusing on their daily (tactical) work.
-
 *Empowerment: The mentee is needing help being empowered to solve workplace problems OR the mentor is holding the reins too tightly and wants a controlled path to passing responsibility to the mentee; http://www.davidhuntoon.com/leaders/successful-leaders-use-empowerment-build-trust-excellence/*
 The primary focus will be on how the mentee can help change occur in the workplace. The first step will be the mentor and mentee working to identify what areas need to be passed to the mentee, and what level of oversight the mentor needs to maintain, it may be helpful to involve the mentor's supervisor/team leader during this phase. The mentor will then ensure that responsibility is passed to the mentee in a controlled fashion.
 
-*Instructional: The Apprentice wants help mastering a specific skill or duty position; https://www.wesd.org/cms/lib/OR01915639/Centricity/Domain/125/OMP%20Info%205%20FINAL.pdf*
-*Example 1:*
-The primary focus will be on the Apprentice's mastery of __Flight Chief duties__. The Apprentice is expected to spend at least __10__ hours a week focusing on these skills. In addition to direct feedback (discussion, email, etc) the mentor will provide references (books, blogs, etc) to support the Apprentice's growth.
-*Example 2:*
-The primary focus will be on the Apprentice's mastery of __python__. The mentor will assign training modules by email every __Monday__, the Apprentice is expected to spend at least __20__ hours a week working on these.
-
 #### Apprentice's Objectives
-1. E.g. Pass CCD Eval
-2. E.g. Earn AWS Certified Developer - Associate Level
-3. E.g. Improve communication skills
+1. Complete all issues in the vJQR
 
 #### Mentor's Objectives
-1. E.g. Improve leadership skills
-2. E.g. More capable coworkers
-3. E.g. Learn new perspective on <topic>
+1. Ensure apprentice completes all items in the vJQR
 
 #### Deliverables
-The Apprentice will provide bi-weekly reports (__Tues/Thur__) on their progress towards the sprint's objectives. The mentor will provide feedback no later than close of business on the next duty day.
+The Apprentice will provide weekly updates (__Fri__) on their progress towards the sprint's objectives. The mentor will provide feedback no later than close of business on the next duty day.
 
 ### Work Hours
 Mentor and Apprentice are both expected to work __40__ hours during a normal work week, typically __8__ hour days between 0600 & 1700. Both parties should try to keep to a regular schedule schedule, with deviations being communicated in a timely fashion.
 
 #### Instruction times
-Mentor and Apprentice will meet every __Wed/Fri__ at __1100__ for __1 hour__ for guided feedback/discussion.
+Mentor and Apprentice will meet every __Fri__ after stand up for no more than __1 hour__ for guided feedback/discussion.
 
 ### Communications
-Both parties are expected to communicate least once per business day. If they are unable to respond that day they should inform the other party that the message was received and an estimation on when a response can be expected. The primary method of communication will be through __discord__.
+Both parties are expected to communicate least once per business day. If they are unable to respond that day they should inform the other party that the message was received and an estimation on when a response can be expected. The primary method of communication will be through __teams__.
 
-#### Mentor's Regular Hours: __0600-1500, M-F__
+#### Mentor's Regular Hours: __0800-1500, M-F__
 
-#### Apprentice's Regular Hours: __0600-1500, M-F__
+#### Apprentice's Regular Hours: __0800-1500, M-F__
 
 ### Mentoring Revision Plan
-The mentor and apprentice will meet once every __quarter__ to review the working agreement and ensure that it is still relevant.
+The mentor and apprentice will meet once every __year__ to review the working agreement and ensure that it is still relevant.
