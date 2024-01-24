@@ -31,9 +31,9 @@ Both mentor and apprentice should have clear expectations for what they expect t
 In addition to the overall goals listed below the mentor will help the apprentice set objectives that align their goals to CYT's action items.
 
 #### Mentorship Style
-> Select the appropriate mentorship style and delete the others.
 
 *Empowerment: The mentee is needing help being empowered to solve workplace problems OR the mentor is holding the reins too tightly and wants a controlled path to passing responsibility to the mentee; http://www.davidhuntoon.com/leaders/successful-leaders-use-empowerment-build-trust-excellence/*
+
 The primary focus will be on how the mentee can help change occur in the workplace. The first step will be the mentor and mentee working to identify what areas need to be passed to the mentee, and what level of oversight the mentor needs to maintain, it may be helpful to involve the mentor's supervisor/team leader during this phase. The mentor will then ensure that responsibility is passed to the mentee in a controlled fashion.
 
 #### Apprentice's Objectives
