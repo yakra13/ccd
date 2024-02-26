@@ -1,0 +1,25 @@
+1.2 Describe the mission of the following CMF team types
+
+Objectives
+
+- [ ] Cyber Protection Team (CPT)
+- [ ] Combat Mission Team (CMT)
+- [ ] National Mission Team (NMT)
+- [ ] Combat Support Team (CST)
+- [ ] National Support Team (NST)
+
+
+-Cyber Protection Team (CPT)
+Defends DODIN, critical infrastructure, and key resources. Also prepares other cyber forces for combat.
+
+-Combat Mission Team (CMT)
+Conducts military cyber operations in support of combatant commands.
+
+-National Mission Team (NMT)
+Defends the nation by observing adversary activity, defending against attacks, and maneuvering to defeat them.
+
+-Combat Support Team (CST)
+Provides support to National Mission and Combat Mission teams.
+
+-National Support Team (NST)
+Provides analytic and planning support to National Mission and Combat Mission teams.
