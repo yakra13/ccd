@@ -1,0 +1,27 @@
+Success -> 100
+Enter an integer: 
+12
+You entered 12
+Custom prompt: 
+12
+You entered 12
+The value is -1
+The value is 0
+The value is 1
+The value is 2
+The value is 3
+The value is 4
+The value is 5
+The value is 6
+The value is 7
+The value is 8
+The value is 9
+The value is 10
+The final value is 10
+The value is 15
+The value is 14
+The value is 13
+The value is 12
+The value is 11
+The value is 10
+The final value is 10
