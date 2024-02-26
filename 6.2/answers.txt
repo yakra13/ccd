@@ -1,0 +1,28 @@
+6.2 Describe C programming concepts in regard to memory
+
+
+Objectives
+
+- [ ] Dynamically allocated memory
+- [ ] Statically allocated memory
+- [ ] In the context of automatic vs dynamic allocation, explain how those concepts are related to the implementation of a stack and heap in a C program
+- [ ] Memory map of a Linux process
+- [ ] Automatically allocated memory
+
+
+-Dynamically allocated memory
+Memory that is allocated at runtime, generally using malloc or calloc.
+
+-Statically allocated memory
+Memory that is allocated at compile time. For declared variables/data structures.
+
+-In the context of automatic vs dynamic allocation, explain how those concepts are related to the implementation of a stack and heap in a C program
+Automatic or static allocated memory is placed in the stack. Dynamically allocated memory is placed in the heap. Memory on the heap needs to be freed
+to reuse that memory space whereas on the stack the memory is 'freed' automatically as variables and functions go out of scope or return.
+
+-Memory map of a Linux process
+||                  Stack                               ||Shared Memory||                     Heap               ||  Data   ||          Text               ||
+|| env,argv,argc | main() vars | available stack memory || dll funcs   || available heap memory | malloced memory|| globals || statically linked lib funcs ||
+
+-Automatically allocated memory
+Memory allocation that occurs on the stack automatically when a variable is declared.
