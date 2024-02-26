@@ -6,6 +6,7 @@ int main(int argc, char **argv)
     if (argc != 2)
     {
         printf("Incorrect usage: Enter a single capitol letter as an argument.\n");
+        return -1;
     }
 
     if (strlen(argv[1]) > 1)

@@ -1,0 +1,15 @@
+\source\ccd-basic-jqr-air-force\6.10> .\data_validation.exe    
+Incorrect usage: Enter a single capitol letter as an argument.
+
+\source\ccd-basic-jqr-air-force\6.10> .\data_validation.exe a
+You did not enter a capitol letter.
+
+\source\ccd-basic-jqr-air-force\6.10> .\data_validation.exe Ab
+You did not enter a single letter.
+
+\source\ccd-basic-jqr-air-force\6.10> .\data_validation.exe A b
+Incorrect usage: Enter a single capitol letter as an argument.
+
+\source\ccd-basic-jqr-air-force\6.10> .\data_validation.exe A  
+Looks good.
+
