@@ -1,0 +1,23 @@
+\source\ccd-basic-jqr-air-force\6.12> .\conditionals.exe 
+Not enough arguments.
+We are exiting with our exit message.
+
+\source\ccd-basic-jqr-air-force\6.12> .\conditionals.exe 1
+Enough arguments, heres some loops.
+This will print exactly once.
+Our count is: 0
+Our count is: 2
+Our count is: 4
+We are exiting with our exit message.
+
+\source\ccd-basic-jqr-air-force\6.12> .\conditionals.exe 1 2
+Lots of arguments, heres some conditionals.
+If this prints our goto worked.
+This concludes our conditional statements.
+We are exiting with our exit message.
+
+\source\ccd-basic-jqr-air-force\6.12> .\conditionals.exe 1 2 3
+Lots of arguments, heres some conditionals.
+If this prints our goto worked.
+This concludes our conditional statements.
+We are exiting with our exit message.
