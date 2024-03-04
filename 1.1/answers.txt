@@ -1,0 +1,19 @@
+1.1 Describe the mission of the following Cyber Mission Force (CMF) Elements
+
+Objectives
+
+- [ ] Cyber National Mission Force (CNMF)
+- [ ] Cyber Combat Mission Force (CCMF)
+- [ ] Cyber Protection Force (CPF)
+
+*SOURCE* JP 3-12 Cyberspace Operations
+
+-Cyber National Mission Force (CNMF)
+Conducts cyber operations to defeat threats to the DODIN and nation. Comprised of NMTs, NSTs, and national CPTs
+focused on defense of non-DODIN blue cyberspace.
+
+-Cyber Combat Mission Force (CCMF)
+Conducts cyber operations to support CCDRs. Comprised of CMTs and associated CSTs.
+
+-Cyber Protection Force (CPF)
+Conducts cyber operations for internal defenese of the DODIN and or other blue cyberspace. Consists of CPTs.
