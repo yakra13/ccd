@@ -28,13 +28,13 @@ int main(int argc, char** argv)
         exit(0);
     }
 
-    printf("Each int will have some random value based on whatever data was left in those memory addresses.\n");
+    printf("\nEach int will have some random value based on whatever data was left in those memory addresses.\n");
     for (size_t i = 0; i < 20; i++)
     {
         printf("%d ", values[i]);
     }
 
-    printf("Free those values.\n");
+    printf("\nFree those values.\n");
     printf("Memory address before free(): %p\n", values);
     free(values);
     printf("Memory address after free(): %p\n", values);
