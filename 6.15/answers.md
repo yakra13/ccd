@@ -13,7 +13,7 @@
 
 **Portable Executable (PE)**
 > Executable format used with Windows. Contains a header consisting of information such as type, size, entry point, etc.
-It also contains they byte code and any data or resources imbedded in the executable.
+It also contains byte code and any data or resources imbedded in the executable.
 
 **Executable and Linkable Format (ELF)**
 > Used by unix-like operating systems for executable programs, shared libraries and object code. Contains a header with information about
