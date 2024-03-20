@@ -11,7 +11,7 @@ int main(int argc, char** argv)
     //The name of the variable we want to print
     char* envvar = "PATH";
 
-    //using the getenv function we can retrieve the env variable based on its name.
+    //Using the getenv function we can retrieve the env variable based on its name.
     //Verify the variable exists
     if(!getenv(envvar)){
         printf("The environment variable %s was not found.\n", envvar);
