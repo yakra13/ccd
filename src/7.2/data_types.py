@@ -19,7 +19,7 @@ from typing import List
 def objective_list() -> List[str]:
     """Returns a single dimension list of strings, a thru z."""
     l: List[str] = []
-
+    # Fill the list with the alphabet.
     for i in range(ord('a'), ord('z') + 1):
         l.append(chr(i))
 
@@ -35,10 +35,10 @@ def objective_multi_dimensional_list() -> List[List[int]]:
     h: int = 5
 
     for y in range(0, h):
-        # append an empty list to multi list
+        # Append an empty list to multi list
         ml.append([])
         for x in range (0, w):
-            # fill the new list with some ints
+            # Fill the new list with some ints
             ml[y].append(x * y)
 
     return ml
@@ -49,6 +49,7 @@ def objective_multi_dimensional_list() -> List[List[int]]:
 def objective_dictionary_tuple() -> dict[float, tuple]:
     """Dictionary, tuple and float example."""
     d: dict[float, tuple] = {}
+    # Fill the dictionary with keys and values
     for x in [0.1, 0.5]:
         for y in range(0, 4):
             d[y + x] = (y, x)
@@ -58,9 +59,13 @@ def objective_dictionary_tuple() -> dict[float, tuple]:
 # [ ] Singleton
 class ObjectiveSingleton(object):
     """Singleton example."""
+    # Use a global class variable to store the first instance of this class that is created
     _instance = None
 
+    # Override __new__ to intercept the creation of the class object
     def __new__(cls):
+        # If the instance of the class doesn't exist create one.
+        # If it does exists return a reference to the single instance.
         if cls._instance is None:
             cls._instance = super(ObjectiveSingleton, cls).__new__(cls)
         return cls._instance
