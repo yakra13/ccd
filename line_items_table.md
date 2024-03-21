@@ -23,5 +23,18 @@
     <td>src</td>
     <td>/6.19/preprocessor.c</td>
   </tr>
+  <tr bgcolor="#333">
+    <td>6.20</td>
+    <td>N/A <br> (Demonstrate skill in accessing environment variables)</td>
+    <td>src</td>
+    <td>/6.20/environment_vars.c</td>
+  </tr>
+  <tr bgcolor="#555">
+    <td>7.2</td>
+    <td>List (list)<br>Multi-dimensional list<br>String (str)<br>Integer (int)<br>Float (float)<br>Dictionary (dict)<br>Tuple (tuple)<br>Singleton</td>
+    <td>src</td>
+    <td>/7.2/data_types.py<br>
+    /7.2/output.txt</td>
+  </tr>
 </tbody>
 </table>
