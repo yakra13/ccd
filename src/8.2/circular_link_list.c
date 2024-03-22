@@ -66,10 +66,7 @@ int main(void)
 
     for (size_t i = 0; i < 35; i++)
     {
-        //48 - 57
-        //97 - 122
         char* c = (char*)malloc(sizeof(char));
-        // printf("address : %p\n", c);
         *c = 48 + i;
         if (*c >= 58 && *c <= 96) { *c += 40; }
 
@@ -98,7 +95,6 @@ CircularLinkedList* CreateCircularLinkList()
     c->FreeAllNodes = FreeAllNodes;
     c->InsertNodeAfter = InsertNodeAfter;
     c->InsertNodeBefore = InsertNodeBefore;
-    // c->RemoveCurrentNode = RemoveCurrentNode;
     c->Sort = SortList;
     return c;
 }
@@ -112,7 +108,7 @@ Node* AddNode(CircularLinkedList* list, void* data, NODE_TYPE type)
     n->data = data;
     n->type = type;
 
-    //If the list is empty add the node and point the next ndoe to itself
+    //If the list is empty add the node and point the next node to itself
     if(!list->current_node)
     {
         list->current_node = n;

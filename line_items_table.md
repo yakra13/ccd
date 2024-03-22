@@ -36,5 +36,29 @@
     <td>/7.2/data_types.py<br>
     /7.2/output.txt</td>
   </tr>
+  <tr>
+    <td>7.3</td>
+    <td>Modulus<br>Addition<br>Subtraction<br>Multiplication<br>Division</td>
+    <td>src</td>
+    <td>/7.3/arithmetic.py<br>/7.3/output.txt</td>
+  </tr>
+  <tr>
+    <td>7.4</td>
+    <td>Read data from a file<br>Parse data from a file<br>Write data to a file<br>Modify data in a file<br>Close an open file<br>Print file information to the console<br>Create a new file<br>Append data to an existing file<br>Delete a file<br>Determine the size of a file<br>Determine location within a file<br>Insert data into an existing file<br>Open an existing file</td>
+    <td>src</td>
+    <td>/7.4/file_management.py<br>/7.4/output.txt</td>
+  </tr>
+  <tr>
+    <td>7.5</td>
+    <td>A function that returns multiple values<br>A function that receives input from a user<br>A recursive function</td>
+    <td>src</td>
+    <td>/7.5/functions.py<br>/7.5/output.txt</td>
+  </tr>
+  <tr>
+    <td>8.2</td>
+    <td>Removing selected items from the circularly linked list<br>Creating a circularly linked list with n number of items<br>Navigating through a circularly linked list<br>Finding the first occurrence of an item in a circularly linked list<br>Sorting the circularly linked list alphanumerically using a function pointer<br>Destroying a circularly linked list<br>Inserting an item into a specific location in a circularly linked list<br>Removing all items from the circularly linked list</td>
+    <td>src</td>
+    <td>/8.2/circular_link_list.c<br>/8.2/circular_link_list.h<br>/8.2/output.txt</td>
+  </tr>
 </tbody>
 </table>
