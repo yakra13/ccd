@@ -49,7 +49,7 @@
     <td>/7.4/file_management.py<br>/7.4/output.txt</td>
   </tr>
   <tr>
-    <td>7.4</td>
+    <td>7.5</td>
     <td>A function that returns multiple values<br>A function that receives input from a user<br>A recursive function</td>
     <td>src</td>
     <td>/7.5/functions.py<br>/7.5/output.txt</td>
