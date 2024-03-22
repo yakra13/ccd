@@ -36,5 +36,23 @@
     <td>/7.2/data_types.py<br>
     /7.2/output.txt</td>
   </tr>
+  <tr>
+    <td>7.3</td>
+    <td>Modulus<br>Addition<br>Subtraction<br>Multiplication<br>Division</td>
+    <td>src</td>
+    <td>/7.3/arithmetic.py<br>/7.3/output.txt</td>
+  </tr>
+  <tr>
+    <td>7.4</td>
+    <td>Read data from a file<br>Parse data from a file<br>Write data to a file<br>Modify data in a file<br>Close an open file<br>Print file information to the console<br>Create a new file<br>Append data to an existing file<br>Delete a file<br>Determine the size of a file<br>Determine location within a file<br>Insert data into an existing file<br>Open an existing file</td>
+    <td>src</td>
+    <td>/7.4/file_management.py<br>/7.4/output.txt</td>
+  </tr>
+  <tr>
+    <td>7.4</td>
+    <td>A function that returns multiple values<br>A function that receives input from a user<br>A recursive function</td>
+    <td>src</td>
+    <td>/7.5/functions.py<br>/7.5/output.txt</td>
+  </tr>
 </tbody>
 </table>
