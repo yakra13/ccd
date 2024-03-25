@@ -54,5 +54,11 @@
     <td>src</td>
     <td>/7.5/functions.py<br>/7.5/output.txt</td>
   </tr>
+  <tr>
+    <td>8.2</td>
+    <td>Removing selected items from the circularly linked list<br>Creating a circularly linked list with n number of items<br>Navigating through a circularly linked list<br>Finding the first occurrence of an item in a circularly linked list<br>Sorting the circularly linked list alphanumerically using a function pointer<br>Destroying a circularly linked list<br>Inserting an item into a specific location in a circularly linked list<br>Removing all items from the circularly linked list</td>
+    <td>src</td>
+    <td>/8.2/circular_link_list.c<br>/8.2/circular_link_list.h<br>/8.2/output.txt</td>
+  </tr>
 </tbody>
 </table>
