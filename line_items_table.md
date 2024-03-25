@@ -36,5 +36,11 @@
     <td>/7.2/data_types.py<br>
     /7.2/output.txt</td>
   </tr>
+  <tr>
+    <td>7.3</td>
+    <td>Modulus<br>Addition<br>Subtraction<br>Multiplication<br>Division</td>
+    <td>src</td>
+    <td>/7.3/arithmetic.py<br>/7.3/output.txt</td>
+  </tr>
 </tbody>
 </table>
