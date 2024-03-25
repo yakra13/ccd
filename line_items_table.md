@@ -42,5 +42,11 @@
     <td>src</td>
     <td>/7.3/arithmetic.py<br>/7.3/output.txt</td>
   </tr>
+    <tr>
+    <td>7.4</td>
+    <td>Read data from a file<br>Parse data from a file<br>Write data to a file<br>Modify data in a file<br>Close an open file<br>Print file information to the console<br>Create a new file<br>Append data to an existing file<br>Delete a file<br>Determine the size of a file<br>Determine location within a file<br>Insert data into an existing file<br>Open an existing file</td>
+    <td>src</td>
+    <td>/7.4/file_management.py<br>/7.4/output.txt</td>
+  </tr>
 </tbody>
 </table>
