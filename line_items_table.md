@@ -72,6 +72,18 @@
     <td>[validation.py](/src/7.6/validation.py)<br>[output.txt](/src/7.6/output.txt)</td>
   </tr>
   <tr>
+    <td>[7.7](!49)</td>
+    <td>for loop<br>while loop<br>with statement<br>if statement<br>if/else statement<br>if/elif/else statement<br>try/except/finally</td>
+    <td>src</td>
+    <td>[conditionals.py](/src/7.7/conditionals.py)<br>[output.txt](/src/7.7/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[7.9](!51)</td>
+    <td>N/A (Parse command line args)</td>
+    <td>src</td>
+    <td>[argparse.cs](/src/7.9/argparse.cs)<br>[output.txt](/src/7.9/output.txt)</td>
+  </tr>
+  <tr>
     <td>[8.2](!53)</td>
     <td>Removing selected items from the circularly linked list<br>Creating a circularly linked list with n number of items<br>Navigating through a circularly linked list<br>Finding the first occurrence of an item in a circularly linked list<br>Sorting the circularly linked list alphanumerically using a function pointer<br>Destroying a circularly linked list<br>Inserting an item into a specific location in a circularly linked list<br>Removing all items from the circularly linked list</td>
     <td>src</td>
