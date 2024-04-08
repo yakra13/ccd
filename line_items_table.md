@@ -42,6 +42,12 @@
     <td>[environment_vars.c](/src/6.20/environment_vars.c)</td>
   </tr>
   <tr>
+    <td>[6.21](!42)</td>
+    <td>With attention given to implementation defined behavior, compare and contrast standard memory allocation functions (e.g ., malloc () calloc(), realloc ( ), and free ())<br>Demonstrate appropriate error checking when managing memory allocations<br>Describe programming techniques that reduce the occurrence of memory leaks (e.g ., behaviors that reinforce a clear ownership model)<br>Demonstrate effective use of Valgrind with --leak-check=full to identify memory leaks<br>Given code samples, identify and remove memory leaks</td>
+    <td>src</td>
+    <td>[controlling_memory.c](/src/6.21/controlling_memoty.c)<br>[output.txt](/src/6.21/output.txt)</td>
+  </tr>
+  <tr>
     <td>[7.2](!44)</td>
     <td>List (list)<br>Multi-dimensional list<br>String (str)<br>Integer (int)<br>Float (float)<br>Dictionary (dict)<br>Tuple (tuple)<br>Singleton</td>
     <td>src</td>
