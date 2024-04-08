@@ -6,7 +6,7 @@ Objectives
 - [x] Demonstrate appropriate error checking when managing memory allocations
 - [x] Describe programming techniques that reduce the occurrence of memory leaks (e.g ., behaviors that reinforce a clear ownership model)
 - [x] Demonstrate effective use of Valgrind with --leak-check=full to identify memory leaks
-- [ ] Given code samples, identify and remove memory leaks
+- [x] Given code samples, identify and remove memory leaks
 */
 
 #include <stdio.h>
@@ -99,4 +99,12 @@ lose the original memory location of the allocated memory when it comes time to 
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.log ./executable params
 
 3.) for more accurate information compile the program with debug flags ie -ggdb3
+*/
+
+
+//- [ ] Given code samples, identify and remove memory leaks
+/* See 6.8 
+https://gitlab.90cos.cdl.af.mil/90cos/virtual-job-qualification-records/current-bccd/ssgt-ziebarth-joshua/ccd-basic-jqr-air-force/-/merge_requests/30
+
+Corrected a handful ofmemory leaks (primarily missing free()s)
 */
