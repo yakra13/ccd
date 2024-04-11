@@ -60,6 +60,7 @@ int main(int argc, char** argv)
     int* temp = realloc(values, 30);
     if (temp == NULL)
     {
+        free(values);
         printf("Failed to realloc.\n");
         exit(0);
     }
@@ -77,7 +78,7 @@ int main(int argc, char** argv)
            "If not it will reallocate to a different address where there is space.\n" \
            "In either situation the values will not be set to 0.");
 
-
+    free(values);
 
     return 0;
 }

@@ -30,6 +30,12 @@
     <td>[6-15-answers.md](/docs/6-15-answers.md)</td>
   </tr>
   <tr>
+    <td>[6.17](!38)</td>
+    <td>N/A (Demonstrate the ability to build a binary from multiple C source files and headers by writing a Makefile using explicit rules)</td>
+    <td>src</td>
+    <td>[main.c](/src/main.c)<br>[vector3.c](/src/vector3.c)<br>[vector3.h](/src/vector3.h)<br>[Makefile](/src/Makefile)<br></td>
+  </tr>
+  <tr>
     <td>[6.19](!40)</td>
     <td>N/A <br> (Demonstrate skill in using the C preprocessor)</td>
     <td>src</td>
@@ -82,6 +88,12 @@
     <td>for loop<br>while loop<br>with statement<br>if statement<br>if/else statement<br>if/elif/else statement<br>try/except/finally</td>
     <td>src</td>
     <td>[conditionals.py](/src/7.7/conditionals.py)<br>[output.txt](/src/7.7/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[7.8](!50)</td>
+    <td>Adapter design pattern<br>The keyword "super"<br>Initialization function of a constructor<br>Bridge design pattern<br>Object<br>Difference between an object when discussing a class<br>Advantages to object-oriented programming<br>Class<br>The keyword "self"<br>Inheritance<br>The getter and setter functions<br>Attributes of a class<br>Factory design pattern<br>Singleton design pattern</td>
+    <td>docs</td>
+    <td>[7-8-answers.md](/docs/7-8-answers.md)</td>
   </tr>
   <tr>
     <td>[7.9](!51)</td>
