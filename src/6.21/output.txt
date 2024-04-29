@@ -1,0 +1,15 @@
+malloc 20 ints
+
+Each int will have some random value based on whatever data was left in those memory addresses.
+7536754 6750300 7012463 3211381 3014748 7274596 7209076 7602277 7602268 7274607 7536748 4390971 6029370 7471184 6750319 6357106 2097261 6881350 6619244 6029427 
+Free those values.
+Memory address before free(): 0000025163DE5380
+Memory address after free(): 0000025163DE5380
+Memory address after calloc() using the same variable: 0000025163DE54A0
+Calloc() initializes the values to 0.
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Realloc that array of ints to include 30 items.
+0 0 0 0 0 0 0 6029312 7536725 7471205 325789838 -1795160985 1867793238 1450404975 1769173605 826109551 926101044 942813998 12850 0 0 0 325593229 -1761606368 1970497878 1951624289 1869177973 1936876886 1030647657 808335153 
+Note that realloc will attempt to extended the memory if there is space on the heap.
+If not it will reallocate to a different address where there is space.
+In either situation the values will not be set to 0.
