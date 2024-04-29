@@ -21,6 +21,16 @@
     <td>[file_management.c](/src/6.8/file_management.c)<br>[file_management.h](/src/6.8/file_management.h)<br>[output.txt](/src/6.8/output.txt)</td>
   </tr>
   <tr>
+    <td>[6.14](!35)</td>
+    <td>Show or describe the conditions necessary to be in the initial state<br>Show or describe the conditions necessary to get to the final state<br>Show or describe the input/output generated (if any) during the change between each possible state<br>Show or describe criteria necessary to change between each possible state<br>Show or describe the relationship (if any) between each state in the program<br>Account for any possible error conditions that may occur during state transitions</td>
+    <td>src</td>
+    <td>[description.md](/src/description.md)<br>
+    [BaseState.cpp](/src/BaseState.cpp)<br>[BaseState.h](/src/BaseState.h)<br>
+    [DashState.cpp](/src/DashState.cpp)<br>[DashState.h](/src/DashState.h)<br>
+    [IdleState.cpp](/src/IdleState.cpp)<br>[IdleState.h](/src/IdleState.h)<br>
+    [WalkState.cpp](/src/WalkState.cpp)<br>[WalkState.h](/src/WalkState.h)<br></td>
+  </tr>
+  <tr>
     <td>[6.15](!36)</td>
     <td>Portable Executable (PE)<br> Executable and Linkable Format (ELF) <br>
      Difference between PE and ELF <br>
