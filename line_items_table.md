@@ -21,6 +21,16 @@
     <td>[file_management.c](/src/6.8/file_management.c)<br>[file_management.h](/src/6.8/file_management.h)<br>[output.txt](/src/6.8/output.txt)</td>
   </tr>
   <tr>
+    <td>[6.14](!35)</td>
+    <td>Show or describe the conditions necessary to be in the initial state<br>Show or describe the conditions necessary to get to the final state<br>Show or describe the input/output generated (if any) during the change between each possible state<br>Show or describe criteria necessary to change between each possible state<br>Show or describe the relationship (if any) between each state in the program<br>Account for any possible error conditions that may occur during state transitions</td>
+    <td>src</td>
+    <td>[description.md](/src/description.md)<br>
+    [BaseState.cpp](/src/BaseState.cpp)<br>[BaseState.h](/src/BaseState.h)<br>
+    [DashState.cpp](/src/DashState.cpp)<br>[DashState.h](/src/DashState.h)<br>
+    [IdleState.cpp](/src/IdleState.cpp)<br>[IdleState.h](/src/IdleState.h)<br>
+    [WalkState.cpp](/src/WalkState.cpp)<br>[WalkState.h](/src/WalkState.h)<br></td>
+  </tr>
+  <tr>
     <td>[6.15](!36)</td>
     <td>Portable Executable (PE)<br> Executable and Linkable Format (ELF) <br>
      Difference between PE and ELF <br>
@@ -52,6 +62,12 @@
     <td>With attention given to implementation defined behavior, compare and contrast standard memory allocation functions (e.g ., malloc () calloc(), realloc ( ), and free ())<br>Demonstrate appropriate error checking when managing memory allocations<br>Describe programming techniques that reduce the occurrence of memory leaks (e.g ., behaviors that reinforce a clear ownership model)<br>Demonstrate effective use of Valgrind with --leak-check=full to identify memory leaks<br>Given code samples, identify and remove memory leaks</td>
     <td>src</td>
     <td>[controlling_memory.c](/src/6.21/controlling_memoty.c)<br>[output.txt](/src/6.21/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[7.1](!43)</td>
+    <td>The return statement<br>Data types<br>A function<br>Parameters<br>Scope<br>Return values (return type and reference)<br>Import files<br>Dictionaries<br>List<br>Tuple<br>Singleton<br>The term mutable<br>The term immutable</td>
+    <td>docs</td>
+    <td>[7-1-answers.md](/docs/7-1-answers.md)</td>
   </tr>
   <tr>
     <td>[7.2](!44)</td>
@@ -99,13 +115,19 @@
     <td>[7.9](!51)</td>
     <td>N/A (Parse command line args)</td>
     <td>src</td>
-    <td>[argparse.py](/src/7.9/argparse.py)<br>[output.txt](/src/7.9/output.txt)</td>
+    <td>[argparse.cs](/src/7.9/argparse.cs)<br>[output.txt](/src/7.9/output.txt)</td>
   </tr>
   <tr>
     <td>[8.2](!53)</td>
     <td>Removing selected items from the circularly linked list<br>Creating a circularly linked list with n number of items<br>Navigating through a circularly linked list<br>Finding the first occurrence of an item in a circularly linked list<br>Sorting the circularly linked list alphanumerically using a function pointer<br>Destroying a circularly linked list<br>Inserting an item into a specific location in a circularly linked list<br>Removing all items from the circularly linked list</td>
     <td>src</td>
     <td>[circular_link_list.c](/src/8.2/circular_link_list.c)<br>[circular_link_list.h](/src/8.2/circular_link_list.h)<br>[output.txt](/src/8.2/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[8.3](!54)</td>
+    <td>Creating a binary search tree with n number of items<br>Navigating through a binary search tree<br>Locating an item in a binary search tree<br>Removing selected items from the binary search tree<br>Removing all items from the binary search tree<br>Describe implementation strategies for a balanced binary search tree<br>Destroying a binary search tree</td>
+    <td>src</td>
+    <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
   </tr>
   <tr>
     <td>[10.2](!62)</td>
