@@ -1,4 +1,5 @@
-"""- [x] Creating a binary search tree with n number of items
+"""Demonstrate skill in creating and using a binary search tree that accepts any data type
+- [x] Creating a binary search tree with n number of items
 - [x] Navigating through a binary search tree
 - [x] Locating an item in a binary search tree
 - [x] Removing selected items from the binary search tree
