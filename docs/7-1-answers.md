@@ -42,7 +42,7 @@
 
 **Dictionaries**
 > Data structure that stores key-value pairs. Keys are unique and immutable and are associated with a value. 
-Particulary useful for efficient lookups as a key indexes directly to its value as well as useful for representing other types of data formats such as JSON.
+Particularly useful for efficient lookups as a key indexes directly to its value as well as useful for representing other types of data formats such as JSON.
 
 **List**
 > Mutable collection of data items. Items in a list can be added and removed from the list, growing and shrinking to the required size. Useful for data set that have an unknown or non-fixed size due to its ability to grow. A list can also be ordered which can be necessary for many applications tho its lookup times are slower.
