@@ -35,19 +35,20 @@
 > The 'visibility' of a variable/class/function. Generally local or global, a global scoped variable is accessable from anywhere whereas a locally scoped variable is only accessible with the same local scope.
 
 **Return values (return type and reference)**
-> Values returned by a function via the return keyword. Return values have a type and this type can be specified with the -> operator. Mutable objects are returned by value whereas immutable objects are returned by reference.
+> Values returned by a function via the return keyword. Return values have a type and this type can be specified with the -> operator. Immutable and mutable objects are returned by value.
 
 **Import files**
 > Used to import functionality/variables/classes from different modules/files into another file.
 
 **Dictionaries**
 > Data structure that stores key-value pairs. Keys are unique and immutable and are associated with a value. 
+Particulary useful for efficient lookups as a key indexes directly to its value as well as useful for representing other types of data formats such as JSON.
 
 **List**
-> Mutable collection of data items. Items in a list can be added and removed from the list, growing and shrinking to the required size.
+> Mutable collection of data items. Items in a list can be added and removed from the list, growing and shrinking to the required size. Useful for data set that have an unknown or non-fixed size due to its ability to grow. A list can also be ordered which can be necessary for many applications tho its lookup times are slower.
 
 **Tuple**
-> Immutable version of a list. Once defined it cannot be changed.
+> Immutable version of a list. Once defined it cannot be changed. Due to its immutability it can be useful when changing a piece of data would be problematic to a program. Additionally a good use for tuples is to return multiple values from a single function.
 
 **Singleton**
 > Design pattern that restricts the instantition of a class to a single object. Useful when having multiple instances of a class wouldn't make sense; such as program settings or a manager class that handles program state.
