@@ -51,7 +51,7 @@ Particulary useful for efficient lookups as a key indexes directly to its value 
 > Immutable version of a list. Once defined it cannot be changed. Due to its immutability it can be useful when changing a piece of data would be problematic to a program. Additionally a good use for tuples is to return multiple values from a single function.
 
 **Singleton**
-> Design pattern that restricts the instantition of a class to a single object. Useful when having multiple instances of a class wouldn't make sense; such as program settings or a manager class that handles program state.
+> Design pattern that restricts the instantiation of a class to a single object. Useful when having multiple instances of a class wouldn't make sense; such as program settings or a manager class that handles program state.
 
 **The term mutable**
 > Means that the data/object can be changed.
