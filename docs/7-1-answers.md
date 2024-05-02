@@ -32,7 +32,7 @@
 > Values that are passed to a function/method/class constructor. They can be optional and have default values.
 
 **Scope**
-> The 'visibility' of a variable/class/function. Generally local or global, a global scoped variable is accessable from anywhere whereas a locally scoped variable is only accessible with the same local scope.
+> The 'visibility' of a variable/class/function. Generally local or global, a global scoped variable is accessible from anywhere whereas a locally scoped variable is only accessible with the same local scope.
 
 **Return values (return type and reference)**
 > Values returned by a function via the return keyword. Return values have a type and this type can be specified with the -> operator. Immutable and mutable objects are returned by value.
