@@ -64,6 +64,12 @@
     <td>[controlling_memory.c](/src/6.21/controlling_memoty.c)<br>[output.txt](/src/6.21/output.txt)</td>
   </tr>
   <tr>
+    <td>[7.1](!43)</td>
+    <td>The return statement<br>Data types<br>A function<br>Parameters<br>Scope<br>Return values (return type and reference)<br>Import files<br>Dictionaries<br>List<br>Tuple<br>Singleton<br>The term mutable<br>The term immutable</td>
+    <td>docs</td>
+    <td>[7-1-answers.md](/docs/7-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[7.2](!44)</td>
     <td>List (list)<br>Multi-dimensional list<br>String (str)<br>Integer (int)<br>Float (float)<br>Dictionary (dict)<br>Tuple (tuple)<br>Singleton</td>
     <td>src</td>
@@ -109,13 +115,25 @@
     <td>[7.9](!51)</td>
     <td>N/A (Parse command line args)</td>
     <td>src</td>
-    <td>[argparse.py](/src/7.9/argparse.py)<br>[output.txt](/src/7.9/output.txt)</td>
+    <td>[argparse.cs](/src/7.9/argparse.cs)<br>[output.txt](/src/7.9/output.txt)</td>
   </tr>
   <tr>
     <td>[8.2](!53)</td>
     <td>Removing selected items from the circularly linked list<br>Creating a circularly linked list with n number of items<br>Navigating through a circularly linked list<br>Finding the first occurrence of an item in a circularly linked list<br>Sorting the circularly linked list alphanumerically using a function pointer<br>Destroying a circularly linked list<br>Inserting an item into a specific location in a circularly linked list<br>Removing all items from the circularly linked list</td>
     <td>src</td>
     <td>[circular_link_list.c](/src/8.2/circular_link_list.c)<br>[circular_link_list.h](/src/8.2/circular_link_list.h)<br>[output.txt](/src/8.2/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[8.3](!54)</td>
+    <td>Creating a binary search tree with n number of items<br>Navigating through a binary search tree<br>Locating an item in a binary search tree<br>Removing selected items from the binary search tree<br>Removing all items from the binary search tree<br>Describe implementation strategies for a balanced binary search tree<br>Destroying a binary search tree</td>
+    <td>src</td>
+    <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[8.6](!57)</td>
+    <td>Defining the underlying structures required for priority queues (cannot be fixed sized)<br>Assigning a priority to each element<br>Inserting an element into the priority queue<br>Removing the element with the highest priority from the priority queue<br>Destroying a priority queue<br>Define possible applications of a priority queue</td>
+    <td>src</td>
+    <td>[priority_queue.py](/src/8.6/priority_queue.py)<br>[output.txt](/src/8.6/output.txt)</td>
   </tr>
   <tr>
     <td>[10.2](!62)</td>
