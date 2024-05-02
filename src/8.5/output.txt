@@ -1,0 +1,8 @@
+stack=[1, 2, 3]
+Peek: 3
+stack=[1, 2, 3]
+Popped: 3
+stack=[1, 2]
+Stack size: 2
+Empty stack
+stack=[]
