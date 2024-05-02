@@ -23,7 +23,7 @@
 > Used to exit a function and optionally return a value/values to the caller.
 
 **Data types**
-> Determines how a value is interpretted. The meaning of data in memory is arbitrary until a data type is associated with it. Some examples of types are integers, booleans, and strings.
+> Determines how a value is interpreted. The meaning of data in memory is arbitrary until a data type is associated with it. Some examples of types are integers, booleans, and strings.
 
 **A function**
 > Functions represent a piece of logic that performs (generally) a single task. Accepting 0 or more inputs and producing 0 or more outputs.
