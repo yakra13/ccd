@@ -35,7 +35,7 @@
 > The 'visibility' of a variable/class/function. Generally local or global, a global scoped variable is accessible from anywhere whereas a locally scoped variable is only accessible with the same local scope.
 
 **Return values (return type and reference)**
-> Values returned by a function via the return keyword. Return values have a type and this type can be specified with the -> operator. Immutable and mutable objects are returned by value.
+> Values returned by a function via the return keyword. Return values have a type and this type can be specified with the -> syntax. Immutable and mutable objects are returned by value.
 
 **Import files**
 > Used to import functionality/variables/classes from different modules/files into another file.
