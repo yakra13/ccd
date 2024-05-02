@@ -1,0 +1,29 @@
+getopt version
+.\argparse.py -o what -m message -h
+	help = True
+	message = message
+	output = what
+
+getopt version
+Invalid value found: goes
+.\argparse.py -o what goes here -m message -h
+	help = False
+	message = None
+	output = None
+
+getopt version
+.\argparse.py -o "what goes here" -m message -h
+	help = True
+	message = message
+	output = what goes here
+
+getopt version
+.\argparse.py -h --output="what goes here"
+	help = True
+	message = None
+	output = what goes here
+
+kwargs version
+.\argparse.py k arg=value arg2=value2
+	arg = arg, value = value
+	arg = arg2, value = value2
