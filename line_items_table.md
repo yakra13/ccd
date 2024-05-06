@@ -130,6 +130,12 @@
     <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
   </tr>
   <tr>
+    <td>[9.2](!59)</td>
+    <td>Data distribution as it relates to hashing<br>Hash function efficiency<br>Hash collisions</td>
+    <td>docs</td>
+    <td>[9-2-answers.md](/docs/9-2-answers.md)</td>
+  </tr>
+  <tr>
     <td>[10.2](!62)</td>
     <td>File systems<br>The boot process</td>
     <td>docs</td>
