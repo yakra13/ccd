@@ -1,0 +1,48 @@
+Convert list to BST: [4, 2, 3, 7, 8, 10, 7, 2, 11]
+In order traversal, number following the colon is the count:
+2:2 3:1 4:1 7:2 8:1 10:1 11:1 
+Tree view, number following the colon is the count:
+        -> 2:2
+    -> 3:1
+        -> 4:1
+-> 7:2
+        -> 8:1
+    -> 10:1
+        -> 11:1
+Add nodes with values of 22, 13, 1, 5
+            -> 1:1
+        -> 2:2
+    -> 3:1
+        -> 4:1
+            -> 5:1
+-> 7:2
+        -> 8:1
+    -> 10:1
+        -> 11:1
+                -> 13:1
+            -> 22:1
+Remove a single 7
+            -> 1:1
+        -> 2:2
+    -> 3:1
+        -> 4:1
+            -> 5:1
+-> 7:1
+        -> 8:1
+    -> 10:1
+        -> 11:1
+                -> 13:1
+            -> 22:1
+Completely remove 11
+            -> 1:1
+        -> 2:2
+    -> 3:1
+        -> 4:1
+            -> 5:1
+-> 7:1
+        -> 8:1
+    -> 10:1
+            -> 13:1
+        -> 22:1
+Clear the tree
+**Call to print the tree but its empty so nothing is printed
