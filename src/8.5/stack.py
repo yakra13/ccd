@@ -8,10 +8,10 @@ Objectives
 - [x] Preventing a stack overrun
 """
 import sys
-from typing import Any
+from typing import Any, List
 
 
-class Stack:
+class Stack(object):
     """Built in list has all methods to function as a stack.
     This class acts as a wrapper around a list to prevent direct calls to
     non-stack like functions on the list.
@@ -28,19 +28,36 @@ class Stack:
 
     def peek(self) -> Any:
         """Returns that value of the top of the stack without removing it"""
+        if len(self._stack) < 1:
+            raise IndexError('Error: Attempt to peek an empty stack.')
         return self._stack[-1]
 
     # - [ ] Adding an item in a stack (enforce FILO)
-    def push(self, element: Any) -> None:
+    def push(self, element: Any = None) -> None:
         """Pushes an element to the top of the stack"""
+        if element is None:
+            return
         # - [ ] Preventing a stack overrun
         if len(self._stack) == sys.maxsize:
             raise IndexError('Unlikely, unless the running machine has little memory.')
         self._stack.append(element)
 
     # - [ ] Removing n items from a stack
+    def pop_list(self, count:int = 1) -> List[Any]:
+        """Removes up to n elements from the stack and returns as a list."""
+        if count <= 0:
+            return []
+        result = []
+        for _ in range(0, count - 1):
+            if len(self._stack) == 0:
+                break
+            result.append(self.pop())
+        return result
+
     def pop(self) -> Any:
         """Removes the top element at returns it"""
+        if len(self._stack) < 1:
+            raise IndexError('Error: Attempt to pop from empty stack.')
         return self._stack.pop()
 
     # - [ ] Removing all items from the stack
@@ -51,6 +68,11 @@ class Stack:
 if __name__ == '__main__':
     # - [ ] Create a stack (cannot be fixed sized)
     s = Stack()
+    # s.peek()
+    # ret = s.pop()
+    s.push()
+    # print(ret)
+
     s.push(1)
     s.push(2)
     s.push(3)
