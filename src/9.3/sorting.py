@@ -63,11 +63,48 @@ def selection_sort(arr: List[int]) -> List[int]:
                        
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
-def insertion_sort(input: List[int]) -> List[int]:
+def insertion_sort(arr: List[int]) -> List[int]:
     """"""
+    for i in range(1, len(arr)):
+        key = arr[i]
 
-def hashing(input: List[int]) -> List[int]:
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        arr[j + 1] = key
+
+    return arr
+
+Dim = 3
+def hash_sort(data: List[int], n, low) -> List[int]:
     """"""
+    swap_count = 0
+    hysteresis_count = 0
+    position = 0
+    value = 0
+
+    # condition to check if the end of data list is 
+    # reached 
+    while ((swap_count < n) and (hysteresis_count < n)): 
+        value = data[(position) // Dim][(position) % Dim] 
+        d = (value - low) // Dim 
+        m = (value - low) % Dim 
+
+        # if hysteresis occurs 
+        if (data[d][m] == value):
+
+            # force push the position by 1 to avoid 
+            # hysteresis 
+            position += 1
+            hysteresis_count += 1
+        # if no hysteresis, then swap the positions 
+        else:
+            temp = data[(position) // Dim][(position) % Dim] 
+            data[(position) // Dim][(position) % Dim] = data[d][m] 
+            data[d][m] = temp
+            swap_count += 1
 
 def _heapify(h_arr, h_arr_len, i):
     largest = i
@@ -99,44 +136,44 @@ def heap_sort(arr: List[int]) -> List[int]:
     return arr
 
 def _partition(p_arr, low, high):
-        pivot = p_arr[high]
-        i = low - 1
+    pivot = p_arr[high]
+    i = low - 1
 
-        for j in range(low, high):
-            if p_arr[j] <= pivot:
-                i += 1
-                p_arr[i], p_arr[j] = p_arr[j], p_arr[i]
+    for j in range(low, high):
+        if p_arr[j] <= pivot:
+            i += 1
+            p_arr[i], p_arr[j] = p_arr[j], p_arr[i]
 
-        p_arr[i + 1], p_arr[high] = p_arr[high], p_arr[i + 1]
+    p_arr[i + 1], p_arr[high] = p_arr[high], p_arr[i + 1]
 
-        return i + 1
+    return i + 1
 
 def quick_sort(arr: List[int], low: int, high: int) -> List[int]:
     """"""
     size = high - low + 1
     stack = [0] * (size)
- 
+
     top = 0 # -1
- 
+
     # top = top + 1
     stack[top] = low
     top += 1
     stack[top] = high
- 
+
     while top >= 0:
         high = stack[top]
         top -= 1
         low = stack[top]
         top -= 1
- 
+
         pivot = _partition(arr, low, high )
- 
+
         if pivot - 1 > low:
             top += 1
             stack[top] = low
             top += 1
             stack[top] = pivot - 1
- 
+
         if pivot + 1 < high:
             top += 1
             stack[top] = pivot + 1
@@ -146,49 +183,61 @@ def quick_sort(arr: List[int], low: int, high: int) -> List[int]:
     return arr
 
 if __name__ == '__main__':
-   
     list_length = len(RAND_LIST)
 
     # print(RAND_LIST)
-    # sorted = quick_sort(RAND_LIST, 0, list_length - 1)
+    # sorted = insertion_sort(RAND_LIST)
     # print(sorted)
-   
+
     # quit()
 
 
-    print(timeit.timeit(stmt='merge_sort(RAND_LIST)',
-                        setup='from __main__ import merge_sort, RAND_LIST',
-                        number=1000))
+    # print(timeit.timeit(stmt='merge_sort(RAND_LIST)',
+    #                     setup='from __main__ import merge_sort, RAND_LIST',
+    #                     number=1000))
 
+    # print(timeit.timeit(stmt='merge_sort(RAND_LIST)',
+    #                     setup='from __main__ import merge_sort, RAND_LIST',
+    #                     number=1000))
+    # quit()
+
+
+
+    # - [ ] Merge sort
     merge_timer = timeit.Timer(functools.partial(merge_sort, RAND_LIST))
-    merge_time_result: float = merge_timer.timeit(1000)
-    print(f'merge sort {RUN_COUNT} executions: ', merge_time_result)
-    print(timeit.timeit(stmt='merge_sort(RAND_LIST)',
-                        setup='from __main__ import merge_sort, RAND_LIST',
-                        number=1000))
-    quit()
-
-
-
-
+    # - [ ] Selection sort
     selection_timer = timeit.Timer(functools.partial(selection_sort, RAND_LIST))
+    # - [ ] Insertion sort
     insertion_timer = timeit.Timer(functools.partial(insertion_sort, RAND_LIST))
+    # - [ ] Hashing
     # # hashing?
+    # - [ ] Heap sort
     heap_timer = timeit.Timer(functools.partial(heap_sort, RAND_LIST))
+    # - [ ] Quick sort
     quick_timer = timeit.Timer(functools.partial(quick_sort, RAND_LIST, 0, list_length - 1))
 
+    merge_time_result: float = merge_timer.timeit(1000)
     selection_time_result: float = selection_timer.timeit(RUN_COUNT)
     insertion_time_result: float = insertion_timer.timeit(RUN_COUNT)
     # # hashing
     heap_time_result: float = heap_timer.timeit(RUN_COUNT)
     quick_time_result: float = quick_timer.timeit(RUN_COUNT)
 
-    print(f'selection sort {RUN_COUNT} executions: ', selection_time_result)
-    print(f'insertion sort {RUN_COUNT} executions: ', insertion_time_result)
-    print(f'heap sort {RUN_COUNT} executions: ', heap_time_result)
-    print(f'quick sort {RUN_COUNT} executions: ', quick_time_result)
+    def print_results(sort_name: str, time: float):
+        print(f'{sort_name} \
+              \n\tExecutions: {RUN_COUNT}\t \
+              \n\tAverage time: {(time / RUN_COUNT):.8f}\t \
+              \n\tTotal time: {time:.8f}')
 
-    
+
+    print_results('Merge Sort', merge_time_result)
+
+    # print(f'merge sort\n\t executions {RUN_COUNT}: ', merge_time_result)
+    # print(f'selection sort {RUN_COUNT} executions: ', selection_time_result)
+    # print(f'insertion sort {RUN_COUNT} executions: ', insertion_time_result)
+    # print(f'heap sort {RUN_COUNT} executions: ', heap_time_result)
+    # print(f'quick sort {RUN_COUNT} executions: ', quick_time_result)
+
     # unsorted = [2, 3, -9, 15, 1, -3, 3, 2, 14]
     # print(RAND_LIST)
     # sorted = merge_sort(RAND_LIST)
