@@ -115,7 +115,7 @@
     <td>[7.9](!51)</td>
     <td>N/A (Parse command line args)</td>
     <td>src</td>
-    <td>[argparse.cs](/src/7.9/argparse.cs)<br>[output.txt](/src/7.9/output.txt)</td>
+    <td>[argparse.py](/src/7.9/argparse.py)<br>[output.txt](/src/7.9/output.txt)</td>
   </tr>
   <tr>
     <td>[8.2](!53)</td>
@@ -130,10 +130,16 @@
     <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
   </tr>
   <tr>
-    <td>[8.5](!56)</td>
-    <td>Removing all items from the stack<br>Create a stack (cannot be fixed sized)<br>Adding an item in a stack (enforce FILO)<br>Removing n items from a stack<br>Destroying a stack<br>Preventing a stack overrun</td>
+    <td>[8.6](!57)</td>
+    <td>Defining the underlying structures required for priority queues (cannot be fixed sized)<br>Assigning a priority to each element<br>Inserting an element into the priority queue<br>Removing the element with the highest priority from the priority queue<br>Destroying a priority queue<br>Define possible applications of a priority queue</td>
     <td>src</td>
-    <td>[stack.py](/src/8.5/stack.py)<br>[output.txt](/src/8.5/output.txt)</td>
+    <td>[priority_queue.py](/src/8.6/priority_queue.py)<br>[output.txt](/src/8.6/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[9.2](!59)</td>
+    <td>Data distribution as it relates to hashing<br>Hash function efficiency<br>Hash collisions</td>
+    <td>docs</td>
+    <td>[9-2-answers.md](/docs/9-2-answers.md)</td>
   </tr>
   <tr>
     <td>[10.2](!62)</td>
