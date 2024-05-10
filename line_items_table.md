@@ -136,6 +136,12 @@
     <td>[9-2-answers.md](/docs/9-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[9.3](!60)</td>
+    <td>Merge sort<br>Selection sort<br>Insertion sort<br>Hashing<br>Heap sort<br>Quick sort</td>
+    <td>src</td>
+    <td>[sorting.py](/src/sorting.py)<br>[output.txt](/src/9.3/output.txt)</td>
+  </tr>
+  <tr>
     <td>[10.2](!62)</td>
     <td>File systems<br>The boot process</td>
     <td>docs</td>
