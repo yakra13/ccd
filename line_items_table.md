@@ -148,6 +148,12 @@
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[12.1](!68)</td>
+    <td>Transmission Control Protocol (TCP) / User Datagram Protocol (UDP)<br>Open Systems Interconnect (OSI) model<br>POSIX API/BSD sockets<br>Purpose and use of sockets<br>Request For Comments (RFCs)<br>Purpose of subnetting</td>
+    <td>docs</td>
+    <td>[12-1-answers.md](/docs/12-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[12.2](!69)</td>
     <td>Simple Mail Transfer Protocol (SMTP)<br>Internet Control Message Protocol (ICMP)<br>Dynamic Host Configuration Protocol (DHCP)<br>Internet Protocol version 4 (IPv4)<br>Internet Protocol version 6 (IPV6)<br>Address Resolution Protocol (ARP)<br>Hypertext Transfer Protocol/Secure (HTTP/HTTPS)<br>Domain Name System (DNS)</td>
     <td>docs</td>
