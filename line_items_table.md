@@ -148,6 +148,12 @@
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[10.4](!64)</td>
+    <td>thread safe<br>thread id<br>Locking (mutex, semaphore, etc)<br>Threading (thread vs pthread)<br>fork<br>join<br>create<br>exit<br>detach<br>self<br>Race conditions<br>conditional variables<br>Deadlocks<br>atomics<br>Scheduling algorithms, i.e ., round robin, shortest job first, priority scheduling, etc.</td>
+    <td>docs</td>
+    <td>[10-4-answers.md](/docs/10-4-answers.md)</td>
+  </tr>
+  <tr>
     <td>[12.1](!68)</td>
     <td>Transmission Control Protocol (TCP) / User Datagram Protocol (UDP)<br>Open Systems Interconnect (OSI) model<br>POSIX API/BSD sockets<br>Purpose and use of sockets<br>Request For Comments (RFCs)<br>Purpose of subnetting</td>
     <td>docs</td>
