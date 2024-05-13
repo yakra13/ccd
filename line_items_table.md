@@ -154,6 +154,12 @@
     <td>[12-2-answers.md](/docs/12-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[12.5](!72)</td>
+    <td>WLAN<br>LAN<br>WAN<br>MAN<br>WWAN</td>
+    <td>docs</td>
+    <td>[12-5-answers.md](/docs/12-5-answers.md)</td>
+  </tr>
+  <tr>
     <td>[19.1](!107)</td>
     <td>Provide user interface (GUI or CLI)<br>Provide documentation for capability<br>Apply software engineering best practices (CI/CD, virtualization, containerization)</td>
     <td>N/A</td>
