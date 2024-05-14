@@ -148,6 +148,12 @@
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[10.3](!63)</td>
+    <td>Signal handling<br>Interrupts</td>
+    <td>docs</td>
+    <td>[signals.c](/src/10.3/signals.c)<br>[output.txt](/src/10.3/output.txt)</td>
+  </tr>
+  <tr>
     <td>[12.2](!69)</td>
     <td>Simple Mail Transfer Protocol (SMTP)<br>Internet Control Message Protocol (ICMP)<br>Dynamic Host Configuration Protocol (DHCP)<br>Internet Protocol version 4 (IPv4)<br>Internet Protocol version 6 (IPV6)<br>Address Resolution Protocol (ARP)<br>Hypertext Transfer Protocol/Secure (HTTP/HTTPS)<br>Domain Name System (DNS)</td>
     <td>docs</td>
