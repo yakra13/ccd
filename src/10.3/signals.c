@@ -16,7 +16,7 @@ Objectives
 volatile sig_atomic_t eflags = 0;
 volatile sig_atomic_t sigint_count = 0;
 
-const int32_t malloc_size = 3;
+const size_t malloc_size = 3;
 
 int32_t* m1;
 int32_t* m2;
@@ -48,10 +48,10 @@ int main()
 
     // Assign default values to the malloced arrays.
     for (size_t i = 0; i < malloc_size; i++)
-        i[m1] = 1234;
-
-    for (size_t i = 0; i < malloc_size; i++)
-        i[m2] = 4321;
+    {
+        m1[i] = 1234;
+        m2[i] = 4321;
+    }
 
     // Track how many memory addresses we read between the two malloced addresses.
     int spots = 0;
