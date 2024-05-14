@@ -160,6 +160,12 @@
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[10.3](!63)</td>
+    <td>Signal handling<br>Interrupts</td>
+    <td>src</td>
+    <td>[signals.c](/src/10.3/signals.c)<br>[output.txt](/src/10.3/output.txt)</td>
+  </tr>
+  <tr>
     <td>[10.4](!64)</td>
     <td>thread safe<br>thread id<br>Locking (mutex, semaphore, etc)<br>Threading (thread vs pthread)<br>fork<br>join<br>create<br>exit<br>detach<br>self<br>Race conditions<br>conditional variables<br>Deadlocks<br>atomics<br>Scheduling algorithms, i.e ., round robin, shortest job first, priority scheduling, etc.</td>
     <td>docs</td>
