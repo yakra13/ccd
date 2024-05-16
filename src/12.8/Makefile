@@ -1,6 +1,9 @@
 CC=gcc
-OUT=sendrecv
-IN=sendrecv.c
+OUT_CLIENT=sendrecv_client
+OUT_SERVER=sendrecv_server
+CLIENT=client.c
+SERVER=sendrecv.c
 
-make: $(IN)
-	$(CC) -Wall -Wfatal-errors -o $(OUT) $(IN)
+make: $(SERVER) $(CLIENT)
+	$(CC) -Wall -Wfatal-errors -o $(OUT_CLIENT) $(CLIENT)
+	$(CC) -Wall -Wfatal-errors -o $(OUT_SERVER) $(SERVER)
