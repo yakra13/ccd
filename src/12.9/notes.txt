@@ -2,4 +2,6 @@
 Objectives
 N/A
 
-Examples of this can be found in 12.7/networking.c -> print_storage() function
+Examples of this can be found in 12.7/networking.c ->
+    print_addrinfo()
+    print_storage()
