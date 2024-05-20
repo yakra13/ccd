@@ -190,6 +190,12 @@
     <td>[12-5-answers.md](/docs/12-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[12.8](!75)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[common.h](/src/12.8/common.h)<br>[message.h](/src/12.8/message.h)<br>[client.c](/src/12.8/client.c)<br>[message.c](/src/12.8/message.c)<br>[server.c](/src/12.8/server.c)</td>
+  </tr>
+  <tr>
     <td>[19.1](!107)</td>
     <td>Provide user interface (GUI or CLI)<br>Provide documentation for capability<br>Apply software engineering best practices (CI/CD, virtualization, containerization)</td>
     <td>N/A</td>
