@@ -1,0 +1,5 @@
+12.9 Demonstrate skill in implementing functions that can properly handle any IP address (IPv4/IPv6)
+Objectives
+N/A
+
+Examples of this can be found in 12.7/networking.c -> print_storage() function
