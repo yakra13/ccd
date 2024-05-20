@@ -3,7 +3,7 @@
 Objectives
 
 - [ ] struct sockaddr_un
-- [ ] struct sockaddr_storage
+- [12.8] struct sockaddr_storage
 - [12.8] socket()
 - [x] gethostname()
 - [12.8] send()
