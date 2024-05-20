@@ -54,7 +54,7 @@ int32_t main(int32_t argc, char** argv)
 void print_addrinfo(char* hostname)
 {
     AddressInfo hints;
-    AddressInfo *info;//, *p_info;
+    AddressInfo *info;
     int32_t gai_result;
 
     memset(&hints, 0, sizeof(hints));
@@ -62,7 +62,7 @@ void print_addrinfo(char* hostname)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_CANONNAME;
 
-    if ((gai_result = getaddrinfo(hostname, "http", &hints, &info)) != 0)
+    if ((gai_result = getaddrinfo(hostname, DEFAULT_SERVER_PORT, &hints, &info)) != 0)
     {
         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(gai_result));
         exit(EXIT_FAILURE);
