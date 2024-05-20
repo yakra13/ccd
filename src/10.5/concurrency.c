@@ -1,12 +1,13 @@
 /*10.5 Demonstrate the ability to use the following constructs associated with concurrency
 Objectives
-- [ ] Threads
-- [ ] Locks
-- [ ] Condition variables
-- [ ] Atomics
-- [ ] Thread Pool (with graceful shutdown without memory leaks)
+- [x] Threads
+- [x] Locks
+- [x] Condition variables
+- [x] Atomics
+- [x] Thread Pool (with graceful shutdown without memory leaks)
 */
 
+#include <stdatomic.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,12 +18,16 @@ Objectives
 static const size_t num_threads = 4;
 static const size_t num_items   = 40;
 
+_Atomic int32_t counter = 0;
+
 void process_task(void* arg)
 {
     int32_t task_number = *((int32_t*)arg);
     printf("%d ", task_number);
     fflush(stdout);
     sleep(1);
+
+    atomic_fetch_add(&counter, 1);
 }
 
 int32_t main(int32_t argc, char** argv)
@@ -50,6 +55,9 @@ int32_t main(int32_t argc, char** argv)
         fflush(stdout);
     }
     printf("\n");
+
+    printf("Atomic counter = %d\n", counter);
+
     free(vals);
 
     thread_pool_destroy(pool);
