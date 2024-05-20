@@ -2,9 +2,9 @@
 12.7 In C, demonstrate skill in using networking commands accounting for endianness
 Objectives
 
-- [ ] struct sockaddr_un
-- [12.8] struct sockaddr_storage
-- [12.8] socket()
+- [x] struct sockaddr_un (SockAddressUnix)
+- [x] struct sockaddr_storage (AddressStorage)
+- [x] socket() (SocketFD)
 - [x] gethostname()
 - [12.8] send()
 - [12.8] recv()
@@ -16,25 +16,35 @@ Objectives
 - [x] getsockopt()
 - [x] setsockopt()
 - [x] getaddrinfo()
-- [12.8] struct sockaddr
-- [12.8] struct sockaddr_in
+- [x] struct sockaddr (SockAddress)
+- [x] struct sockaddr_in (SockAddressIn)
 */
 #include "common.h"
 
 void print_addrinfo(char* hostname);
 void print_hostname(char* host_buffer);
-void print_socket_info(int32_t s);
+void print_socket_info(SocketFD s);
+void print_storage(AddressStorage* addr);
 void run_server(SocketFD s);
 SocketFD setup_socket_UDP(SockAddressIn* out);
+SocketFD setup_socket_unix(SockAddressUnix* out);
+
+// NOTE: Development is done with WSL2 and unix sockets are not supported.
+// As such the unix socket example is not implemented on the client side
+// and setup_socket_unix() is merely meant to be a non-working example
+// #define UNIX_EXAMPLE
 
 int32_t main(int32_t argc, char** argv)
 {
-    // TODO
-    struct sockaddr_un unix_address;
-    struct sockaddr_storage storage;
+    SocketFD s;
 
+#ifdef UNIX_EXAMPLE
+    SockAddressUnix unix_addr;
+    s = setup_socket_unix(&unix_addr);
+#else
     SockAddressIn s_addr;
-    SocketFD s = setup_socket_UDP(&s_addr);
+    s = setup_socket_UDP(&s_addr);
+#endif
 
     char hostname[1024] = {'\0'};
     
@@ -48,9 +58,14 @@ int32_t main(int32_t argc, char** argv)
 
     close(s);
 
+#ifdef UNIX_EXAMPLE
+    unlink(SOCKET_PATH);
+#endif
+
     return EXIT_SUCCESS;
 }
 
+// - [x] getaddrinfo()
 void print_addrinfo(char* hostname)
 {
     AddressInfo hints;
@@ -62,7 +77,7 @@ void print_addrinfo(char* hostname)
     hints.ai_socktype = SOCK_STREAM;
     hints.ai_flags = AI_CANONNAME;
 
-    if ((gai_result = getaddrinfo(hostname, DEFAULT_SERVER_PORT, &hints, &info)) != 0)
+    if ((gai_result = getaddrinfo(hostname, NULL, &hints, &info)) != 0)
     {
         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(gai_result));
         exit(EXIT_FAILURE);
@@ -98,6 +113,7 @@ void print_addrinfo(char* hostname)
     freeaddrinfo(info);
 }
 
+// - [x] gethostname()
 void print_hostname(char* host_buffer)
 {
     gethostname(host_buffer, 1023);
@@ -105,7 +121,8 @@ void print_hostname(char* host_buffer)
     printf("-------------------------------------------\n");
 }
 
-void print_socket_info(int32_t s)
+// - [x] getsockopt()
+void print_socket_info(SocketFD s)
 {
     int32_t v;
     socklen_t l = sizeof(v);
@@ -146,27 +163,56 @@ void print_socket_info(int32_t s)
     }
 }
 
+// - [x] struct sockaddr_storage (AddressStorage)
+void print_storage(AddressStorage* addr)
+{
+    char ipstr[INET6_ADDRSTRLEN];
+
+    if (addr->ss_family == AF_INET)
+    {
+        SockAddressIn *ipv4 = (SockAddressIn*)addr;
+        inet_ntop(AF_INET, &ipv4->sin_addr, ipstr, sizeof(ipstr));
+        printf("%s:", ipstr);
+        printf("%d - ", ntohs(ipv4->sin_port));
+    }
+    else if (addr->ss_family == AF_INET6)
+    {
+        SockAddressIn6 *ipv6 = (SockAddressIn6*)addr;
+        inet_ntop(AF_INET6, &ipv6->sin6_addr, ipstr, sizeof(ipstr));
+        printf("%s:", ipstr);
+        printf("%d - ", ntohs(ipv6->sin6_port));
+    }
+    else
+    {
+        printf("Unknown AF - ");
+    }
+}
+
+// - [x] sendto()
+// - [x] recvfrom()
 void run_server(SocketFD s)
 {
-    SockAddressIn c_addr;
+    AddressStorage c_addr;
     socklen_t c_len = sizeof(c_addr);
 
     char buffer[MAX_RECV_BUFFER] = {'\0'};
 
     for (;;)
     {
-        if(recvfrom(s, buffer, MAX_RECV_BUFFER, 0, (struct sockaddr *)&c_addr, &c_len) < 0)
+        if(recvfrom(s, buffer, MAX_RECV_BUFFER, 0, (SockAddress*)&c_addr, &c_len) < 0)
         {
             perror("recvfrom");
             return;
         }
         
-        printf("<< %s\n", buffer);
+        printf("<< ");
+        print_storage(&c_addr);
+        printf("%s\n", buffer);
         
         if (strlen(buffer) < MAX_RECV_BUFFER)
             strcat(buffer, "!");
 
-        if (sendto(s, buffer, strlen(buffer), 0, (struct sockaddr *)&c_addr, c_len) < 0)
+        if (sendto(s, buffer, strlen(buffer), 0, (SockAddress*)&c_addr, c_len) < 0)
         {
             perror("sendto");
             return;
@@ -176,6 +222,10 @@ void run_server(SocketFD s)
     }
 }
 
+// - [x] struct sockaddr (SockAddress)
+// - [x] struct sockaddr_in (SockAddressIn)
+// - [x] socket() (SocketFD)
+// - [x] setsockopt()
 SocketFD setup_socket_UDP(SockAddressIn* out)
 {
     SocketFD s = 0;
@@ -190,7 +240,7 @@ SocketFD setup_socket_UDP(SockAddressIn* out)
         exit(EXIT_FAILURE);
     }
 
-    if (bind(s, (struct sockaddr*)out, sizeof(*out)) < 0)
+    if (bind(s, (SockAddress*)out, sizeof(*out)) < 0)
     {
         perror("bind");
         exit(EXIT_FAILURE);
@@ -199,18 +249,21 @@ SocketFD setup_socket_UDP(SockAddressIn* out)
     if (setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &(int){1}, sizeof(int)) < 0)
     {
         perror("setsockopt SO_REUSEADDR");
+        close(s);
         exit(EXIT_FAILURE);
     }
 
     if (setsockopt(s, SOL_SOCKET, SO_RCVBUF, &(int){MAX_RECV_BUFFER}, sizeof(int)) < 0)
     {
         perror("setsockopt SO_RCVBUF");
+        close(s);
         exit(EXIT_FAILURE);
     }
 
         if (setsockopt(s, SOL_SOCKET, SO_SNDBUF, &(int){MAX_SEND_BUFFER}, sizeof(int)) < 0)
     {
         perror("setsockopt SO_RCVBUF");
+        close(s);
         exit(EXIT_FAILURE);
     }
 
@@ -218,9 +271,41 @@ SocketFD setup_socket_UDP(SockAddressIn* out)
     if (setsockopt(s, SOL_SOCKET, SO_REUSEPORT, &(int){1}, sizeof(int)) < 0)
     { 
         perror("setsockopt SO_REUSEPORT");
+        close(s);
         exit(EXIT_FAILURE);
     }
 #endif
+
+    return s;
+}
+
+SocketFD setup_socket_unix(SockAddressUnix* out)
+{
+    SocketFD s = 0;
+
+    if ((s = socket(AF_UNIX, SOCK_DGRAM, 0)) < 0)
+    {
+        perror("socket");
+        exit(EXIT_FAILURE);
+    }
+
+    memset(out, 0, sizeof(SockAddressUnix));
+    out->sun_family = AF_UNIX;
+    strncpy(out->sun_path, SOCKET_PATH, sizeof(out->sun_path) - 1);
+
+    unlink(SOCKET_PATH);
+
+    // NOTE: Will fail here if running under WSL2 as Unix sockets are not supported.
+    // This is meant only as an example of how to use struct sockaddr_un and is not
+    // implemented in the client side for sending a message with a unix socket.
+    if (bind(s, (SockAddress*)out, sizeof(SockAddressUnix)) < 0)
+    {
+        perror("bind");
+        close(s);
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Unix socket waiting for connections...\n");
 
     return s;
 }

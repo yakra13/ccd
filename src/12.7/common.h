@@ -15,8 +15,12 @@
 #define MAX_CONNECTIONS 1
 #define MAX_RECV_BUFFER 4096
 #define MAX_SEND_BUFFER 4096
+#define SOCKET_PATH "example_socket"
 
 typedef int SocketFD;
+typedef struct sockaddr SockAddress;
 typedef struct sockaddr_in SockAddressIn;
 typedef struct sockaddr_in6 SockAddressIn6;
+typedef struct sockaddr_un SockAddressUnix;
 typedef struct addrinfo AddressInfo;
+typedef struct sockaddr_storage AddressStorage;

@@ -54,7 +54,7 @@ int32_t main(int32_t argc, char** argv)
 
     server_len = sizeof(server_address);
 
-    if (sendto(c, argv[1], message_len, 0, (struct sockaddr *)&server_address, server_len) < 0)
+    if (sendto(c, argv[1], message_len, 0, (SockAddress*)&server_address, server_len) < 0)
     {
         perror("sendto");
         close(c);
@@ -68,7 +68,7 @@ int32_t main(int32_t argc, char** argv)
         exit(EXIT_FAILURE);
     }
 
-    printf(">> %s\n", buffer);
+    printf(">> Server Reply - %s\n", buffer);
 
     close(c);
 
