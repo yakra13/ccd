@@ -19,7 +19,7 @@ static const size_t num_threads = 4;
 static const size_t num_items   = 40;
 
 _Atomic int32_t counter = 0;
-
+// - [x] Atomics
 void process_task(void* arg)
 {
     int32_t task_number = *((int32_t*)arg);

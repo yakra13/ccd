@@ -1,3 +1,11 @@
+/*10.5 Demonstrate the ability to use the following constructs associated with concurrency
+Objectives
+- [x] Threads
+- [x] Locks
+- [x] Condition variables
+- [x] Atomics
+- [x] Thread Pool (with graceful shutdown without memory leaks)
+*/
 #include "threadpool.h"
 
 static void* thread_pool_worker(void* arg);
@@ -5,7 +13,9 @@ static ThreadTask* thread_task_create(thread_func func, void *arg);
 static void thread_task_destroy(ThreadTask* task);
 static ThreadTask* thread_task_get(ThreadPool* pool);
 
-
+// - [x] Threads
+// - [x] Condition variables
+// - [x] Thread Pool
 ThreadPool* thread_pool_create(size_t num)
 {
     ThreadPool* pool;
@@ -34,6 +44,7 @@ ThreadPool* thread_pool_create(size_t num)
     return pool;
 }
 
+// - [x] Locks
 void thread_pool_destroy(ThreadPool* pool)
 {
     ThreadTask* cur_task;
