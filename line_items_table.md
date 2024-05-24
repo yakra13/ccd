@@ -190,6 +190,12 @@
     <td>[12-5-answers.md](/docs/12-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[12.9](!76)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[notes.txt](/src/12.9/notes.txt)</td>
+  </tr>
+  <tr>
     <td>[19.1](!107)</td>
     <td>Provide user interface (GUI or CLI)<br>Provide documentation for capability<br>Apply software engineering best practices (CI/CD, virtualization, containerization)</td>
     <td>N/A</td>
