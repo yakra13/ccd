@@ -3,6 +3,7 @@
 Objectives
 - N/A
 */
+#include <errno.h>
 #include "common.h"
 
 void message_to_buffer(char* buffer, Message* message);
@@ -60,13 +61,31 @@ int32_t main(int32_t argc, char** argv)
     while(remaining > 0)
     {
         ssize_t bytes_sent = 0;
-
+        errno = 0;
         if ((bytes_sent = send(c_sock, 
                 data_buffer + total_sent,
                 remaining > MAX_SEND_BUFFER ? MAX_SEND_BUFFER : remaining, 0)) > 0)
         {
             total_sent += bytes_sent;
             remaining -= bytes_sent;
+        }
+        else
+        {
+            if (errno == EINTR || bytes_sent == 0)
+            {
+                if (++attempts > 10)
+                {
+                    printf("send() attempts too high\n");
+                    break;
+                }
+
+                continue;
+            }
+            else
+            {
+                printf("send() error: %s\n", strerror(errno));
+                break;
+            }
         }
     }
 
