@@ -148,10 +148,22 @@
     <td>[sorting.py](/src/sorting.py)<br>[output.txt](/src/9.3/output.txt)</td>
   </tr>
   <tr>
+    <td>[10.1](!61)</td>
+    <td>Processes<br>CPU scheduling<br>Paging tables<br>Caching<br>Kernel and user-mode memory</td>
+    <td>docs</td>
+    <td>[10-1-answers.md](/docs/10-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[10.2](!62)</td>
     <td>File systems<br>The boot process</td>
     <td>docs</td>
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[10.3](!63)</td>
+    <td>Signal handling<br>Interrupts</td>
+    <td>src</td>
+    <td>[signals.c](/src/10.3/signals.c)<br>[output.txt](/src/10.3/output.txt)</td>
   </tr>
   <tr>
     <td>[10.4](!64)</td>
