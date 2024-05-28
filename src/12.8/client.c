@@ -57,10 +57,12 @@ int32_t main(int32_t argc, char** argv)
 
     size_t total_sent = 0;
     ssize_t remaining = (ssize_t)message.data_length + MESSAGE_HEADER_SIZE;
+    int32_t attempts = 0;
+    ssize_t bytes_sent = 0;
 
     while(remaining > 0)
     {
-        ssize_t bytes_sent = 0;
+        bytes_sent = 0;
         errno = 0;
         if ((bytes_sent = send(c_sock, 
                 data_buffer + total_sent,
