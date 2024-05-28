@@ -192,6 +192,14 @@
   <tr>
     <td>[12.7](!74)</td>
     <td>struct sockaddr_un<br>struct sockaddr_storage<br>socket()<br>gethostname()<br>send()<br>recv()<br>sendto()<br>recvfrom()<br>bind()<br>connect()<br>accept()<br>getsockopt()<br>setsockopt()<br>getaddrinfo()<br>struct sockaddr<br>struct sockaddr_in</td>
+    <td>[12.8](!75)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[common.h](/src/12.8/common.h)<br>[message.h](/src/12.8/message.h)<br>[client.c](/src/12.8/client.c)<br>[message.c](/src/12.8/message.c)<br>[server.c](/src/12.8/server.c)</td>
+  </tr>
+  <tr>
+    <td>[12.9](!76)</td>
+    <td>N/A</td>
     <td>src</td>
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
