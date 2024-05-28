@@ -190,10 +190,10 @@
     <td>[12-5-answers.md](/docs/12-5-answers.md)</td>
   </tr>
   <tr>
-    <td>[12.9](!76)</td>
-    <td>N/A</td>
+    <td>[12.7](!74)</td>
+    <td>struct sockaddr_un<br>struct sockaddr_storage<br>socket()<br>gethostname()<br>send()<br>recv()<br>sendto()<br>recvfrom()<br>bind()<br>connect()<br>accept()<br>getsockopt()<br>setsockopt()<br>getaddrinfo()<br>struct sockaddr<br>struct sockaddr_in</td>
     <td>src</td>
-    <td>[notes.txt](/src/12.9/notes.txt)</td>
+    <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
     <td>[19.1](!107)</td>
