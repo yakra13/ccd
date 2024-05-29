@@ -6,6 +6,7 @@ Objectives
 - [x] Atomics
 - [x] Thread Pool (with graceful shutdown without memory leaks)
 */
+#include <stdio.h>
 #include "threadpool.h"
 
 static void* thread_pool_worker(void* arg);
@@ -21,31 +22,33 @@ ThreadPool* thread_pool_create(size_t num)
     ThreadPool* pool;
     pthread_t thread;
     size_t i = 0;
+    int err = 0;
 
     if (num == 0)
         num = 2;
 
+    // Allocate memory for the thread pool
     pool = (ThreadPool*)calloc(1, sizeof(*pool));
     if (pool == NULL)
         return NULL;
 
-    pool->thread_count = num;
 
-    if ((err = pthread_mutex_init(&(pool->mutex), NULL) != 0)
+    // Initialize the mutex lock and conditionals
+    if ((err = pthread_mutex_init(&(pool->mutex), NULL)) != 0)
     {
         printf("pthread error mutex init: %d\n", err);
         free(pool);
         return NULL;
     }
 
-    if ((err = pthread_cond_init(&(pool->task_cond), NULL) != 0)
+    if ((err = pthread_cond_init(&(pool->task_cond), NULL)) != 0)
     {
         printf("pthread error cond init(task_cond): %d\n", err);
         free(pool);
         return NULL;
     }
 
-    if ((err = pthread_cond_init(&(pool->working_cond), NULL) != 0)
+    if ((err = pthread_cond_init(&(pool->working_cond), NULL)) != 0)
     {
         printf("pthread error cond init(working_cond): %d\n", err);
         free(pool);
@@ -55,21 +58,29 @@ ThreadPool* thread_pool_create(size_t num)
     pool->head = NULL;
     pool->tail = NULL;
 
+    pool->thread_count = 0;
+
+    // Create the threads to act as workers for the thread pool
     for (; i < num; i++)
     {
-        if ((err = pthread_create(&thread, NULL, thread_pool_worker, pool) != 0)
+        // Create each thread and on failure try the next thread.
+        // This results in fewer workers than specified.
+        if ((err = pthread_create(&thread, NULL, thread_pool_worker, pool)) != 0)
         {
             printf("pthread error create: %d\n", err);
-            free(pool);
-            return NULL;
+            continue;
         }
 
-        if ((err = pthread_detach(thread) != 0)
+        // On error either the specified thread is not joinable or this thread wasn't found
+        // Either option should never happen so if we error here something is horribly wrong.
+        if ((err = pthread_detach(thread)) != 0)
         {
             printf("pthread error detach: %d\n", err);
             free(pool);
             return NULL;
         }
+
+            pool->thread_count++;
     }
     
     return pool;
@@ -84,17 +95,18 @@ int thread_pool_destroy(ThreadPool* pool)
 
     if (pool == NULL)
     {
-        printf("Error thread pool is null.\n")
+        printf("Error thread pool is null.\n");
         return -1;
     }
 
-    if ((err = pthread_mutex_lock(&(pool->mutex)) != 0)
+    if ((err = pthread_mutex_lock(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex lock: %d\n", err);
         free(pool);
         return err;
     }
     
+    // Ultimately we want to complete all the tasks here if they are not already
     cur_task = pool->head;
     
     while (cur_task != NULL)
@@ -107,40 +119,48 @@ int thread_pool_destroy(ThreadPool* pool)
     pool->head = NULL;
     pool->stop = true;
 
-    if ((err = pthread_cond_broadcast(&(pool->task_cond)) != 0)
+    // At this point most of the errors really don't matter much.
+    // We are closing out the thread pool and preparing to free it.
+    // If we got this far the results have been printed and we are closing
+    // the program so we at least ensure we free the memory and let
+    // the user know if something errors.
+
+    if ((err = pthread_cond_broadcast(&(pool->task_cond))) != 0)
     {
         printf("pthread error cond broadcast: %d\n", err);
         free(pool);
         return err;
     }
 
-    if ((err = pthread_mutex_unlock(&(pool->mutex)) != 0)
+    if ((err = pthread_mutex_unlock(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex unlock: %d\n", err);
+        free(pool);
+        return err;
     }
 
-    if ((err = thread_pool_wait(pool) != 0)
+    if ((err = thread_pool_wait(pool)) != 0)
     {
         printf("Error waiting for tasks: %d\n", err);
         free(pool);
         return err;
     }
 
-    if ((err = pthread_mutex_destroy(&(pool->mutex)) != 0)
+    if ((err = pthread_mutex_destroy(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex destroy: %d\n", err);
         free(pool);
         return err;
     }
 
-    if ((err = pthread_cond_destroy(&(pool->task_cond)) != 0)
+    if ((err = pthread_cond_destroy(&(pool->task_cond))) != 0)
     {
         printf("pthread error cond destroy(task_cond): %d\n", err);
         free(pool);
         return err;
     }
 
-    if ((err = pthread_cond_destroy(&(pool->working_cond)) != 0)
+    if ((err = pthread_cond_destroy(&(pool->working_cond))) != 0)
     {
         printf("pthread error cond destroy(working_cond): %d\n", err);
         free(pool);
@@ -152,6 +172,7 @@ int thread_pool_destroy(ThreadPool* pool)
     return err;
 }
 
+// Add a task to the thread pool
 int thread_pool_add_task(ThreadPool* pool, thread_func func, void *arg)
 {
     int err = 0;
@@ -159,19 +180,20 @@ int thread_pool_add_task(ThreadPool* pool, thread_func func, void *arg)
 
     if (pool == NULL)
     {
-        printf("Error thread pool is null.\n")
+        printf("Error thread pool is null.\n");
         return -1;
     }
 
     if ((task = thread_task_create(func, arg)) == NULL)
         return err;
 
-    if ((err = pthread_mutex_lock(&(pool->mutex)) != 0)
+    if ((err = pthread_mutex_lock(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex lock: %d\n", err);
         return err;
     }
 
+    // Append tasks to the circular list
     if (pool->head == NULL)
     {
         pool->head = task;
@@ -183,15 +205,19 @@ int thread_pool_add_task(ThreadPool* pool, thread_func func, void *arg)
         pool->tail = task;
     }
 
-    if ((err = pthread_cond_broadcast(&(pool->task_cond)) != 0)
+    // Unblocks threads with this condition
+    // With the way the pool is designed this should never error
+    if ((err = pthread_cond_broadcast(&(pool->task_cond))) != 0)
     {
         printf("pthread error cond broadcast: %d\n", err);
-        return err;
     }
 
-    if ((err = pthread_mutex_unlock(&(pool->mutex)) != 0)
+    // As far as I am aware an error with unlock means the current thread
+    // does not own the mutex so continuing on should be fine.
+    if ((err = pthread_mutex_unlock(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex unlock: %d\n", err);
+        err = 0;
     }
 
     return err;
@@ -202,7 +228,7 @@ int thread_pool_wait(ThreadPool* pool)
     int err = 0;
     if (pool == NULL)
     {
-        printf("Error thread pool is null.\n")
+        printf("Error thread pool is null.\n");
         return -1;
     }
 
@@ -218,6 +244,7 @@ int thread_pool_wait(ThreadPool* pool)
             (!pool->stop && pool->working_count != 0) ||
             (pool->stop && pool->thread_count != 0))
         {
+            // This should only error if the lock is not currently owned by this thread
             if ((err = pthread_cond_wait(&(pool->working_cond), &(pool->mutex))) != 0)
             {
                 printf("pthread error cond wait: %d\n", err);
@@ -228,14 +255,18 @@ int thread_pool_wait(ThreadPool* pool)
             break;
     }
 
+    // As far as I am aware an error with unlock means the current thread
+    // does not own the mutex so continuing on should be fine.
     if ((err = pthread_mutex_unlock(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex unlock: %d\n", err);
+        err = 0;
     }
 
     return err;
 }
 
+// Worker function to be run by each thread to process a task.
 static void* thread_pool_worker(void* arg)
 {
     ThreadPool* pool = arg;
@@ -245,7 +276,7 @@ static void* thread_pool_worker(void* arg)
     if (pool == NULL)
     {
         printf("Worker was given a null pool.\n");
-        return;
+        return NULL;
     }
 
     while(true)
@@ -257,9 +288,9 @@ static void* thread_pool_worker(void* arg)
         }
 
         while (pool->head == NULL && !pool->stop)
-            if ((err = pthread_cond_wait(&(pool->task_cond), &(pool->mutex)) != 0)
+            if ((err = pthread_cond_wait(&(pool->task_cond), &(pool->mutex))) != 0)
             {
-                printf("worker error pthread cond wait: %dn", err)
+                printf("worker error pthread cond wait: %dn", err);
             }
 
         if (pool->stop)
@@ -268,6 +299,8 @@ static void* thread_pool_worker(void* arg)
         task = thread_task_get(pool);
         pool->working_count++;
 
+        // As far as I am aware an error with unlock means the current thread
+        // does not own the mutex so continuing on should be fine.
         if ((err = pthread_mutex_unlock(&(pool->mutex))) != 0)
         {
             printf("worker pthread error mutex unlock: %d\n", err);
@@ -288,11 +321,12 @@ static void* thread_pool_worker(void* arg)
         pool->working_count--;
 
         if (!pool->stop && pool->working_count == 0 && pool->head == NULL)
-            if ((err = pthread_cond_signal(&(pool->working_cond)) != 0)
+            if ((err = pthread_cond_signal(&(pool->working_cond))) != 0)
             {
                 printf("worker error pthread cond signal: %d\n", err);
             }
-
+        // As far as I am aware an error with unlock means the current thread
+        // does not own the mutex so continuing on should be fine.
         if ((err = pthread_mutex_unlock(&(pool->mutex))) != 0)
         {
             printf("pthread error mutex unlock: %d\n", err);
@@ -300,11 +334,13 @@ static void* thread_pool_worker(void* arg)
     }
 
     pool->thread_count--;
-    if ((err = pthread_cond_signal(&(pool->working_cond)) != 0)
+    if ((err = pthread_cond_signal(&(pool->working_cond))) != 0)
     {
         printf("worker error pthread cond signal: %d\n", err);
     }
 
+    // As far as I am aware an error with unlock means the current thread
+    // does not own the mutex so continuing on should be fine.
     if ((err = pthread_mutex_unlock(&(pool->mutex))) != 0)
     {
         printf("pthread error mutex unlock: %d\n", err);
@@ -313,20 +349,21 @@ static void* thread_pool_worker(void* arg)
     return NULL;
 }
 
+// Allocates memory for a task and sets its attributes
 static ThreadTask* thread_task_create(thread_func func, void *arg)
 {
     ThreadTask* task;
 
     if (func == NULL)
     {
-        printf('Error func null in create task.\n');
+        printf("Error func null in create task.\n");
         return NULL;
     }
 
     task = (ThreadTask*)malloc(sizeof(*task));
     if (task == NULL)
     {
-        printf('Error malloc create task.\n');
+        printf("Error malloc create task.\n");
         return NULL;
     }
 
@@ -337,6 +374,7 @@ static ThreadTask* thread_task_create(thread_func func, void *arg)
     return task;
 }
 
+// Just frees the tasks allocated memory
 static void thread_task_destroy(ThreadTask* task)
 {
     if (task == NULL)
@@ -345,6 +383,7 @@ static void thread_task_destroy(ThreadTask* task)
     free(task);
 }
 
+// Removes a task from the list and returns it.
 static ThreadTask* thread_task_get(ThreadPool* pool)
 {
     ThreadTask* task;

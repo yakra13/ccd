@@ -12,6 +12,8 @@ Objectives
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <errno.h>
 
 #include "threadpool.h"
 
@@ -20,6 +22,7 @@ static const size_t num_items   = 40;
 
 _Atomic int32_t counter = 0;
 // - [x] Atomics
+// The function each task will use
 void process_task(void* arg)
 {
     int32_t task_number = *((int32_t*)arg);
@@ -27,6 +30,7 @@ void process_task(void* arg)
     fflush(stdout);
     sleep(1);
 
+    // Simple atomic example to add one to counter
     atomic_fetch_add(&counter, 1);
 }
 
@@ -40,15 +44,16 @@ int32_t main(int32_t argc, char** argv)
 
     if (pool == NULL)
     {
-        printf('ERROR: Could not create a thread pool.\n');
+        printf("ERROR: Could not create a thread pool.\n");
         return EXIT_FAILURE;
     }
 
+    // Allocate memory for the args to be used in the tasks
     vals = (int32_t*)calloc(num_items, sizeof(*vals));
 
     if (vals == NULL)
     {
-        printf('calloc error: %s\n', strerror(errno));
+        printf("calloc error: %s\n", strerror(errno));
         return EXIT_FAILURE;
     }
     
@@ -56,15 +61,17 @@ int32_t main(int32_t argc, char** argv)
     for (size_t i = 0; i < num_items; i++)
     {
         vals[i] = i;
-        if ((err = thread_pool_add_task(pool, process_task, vals + i) != 0)
+        // Add a task to the thread pool to be processed by a worker
+        if ((err = thread_pool_add_task(pool, process_task, vals + i)) != 0)
         {
-            printf('Error creating task %d: err %d\n', vals[i], err);
+            printf("Error creating task %d: err %d\n", *(vals + i), err);
         }
     }
 
-    if ((err = thread_pool_wait(pool) != 0)
+    // Wait for the workers to complete the tasks
+    if ((err = thread_pool_wait(pool)) != 0)
     {
-        printf('Error waiting for tasks: %d\n');
+        printf("Error waiting for tasks: %d\n", err);
     }
     else
     {
@@ -83,7 +90,8 @@ int32_t main(int32_t argc, char** argv)
 
     free(vals);
 
-    if ((err = thread_pool_destroy(pool) != 0)
+    // Clean up the thread pool
+    if ((err = thread_pool_destroy(pool)) != 0)
     {
         printf("Error destroying pool: %d\n", err);
         return EXIT_FAILURE;
@@ -91,4 +99,3 @@ int32_t main(int32_t argc, char** argv)
 
     return EXIT_SUCCESS;
 }
-
