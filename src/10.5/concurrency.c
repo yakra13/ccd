@@ -34,33 +34,60 @@ int32_t main(int32_t argc, char** argv)
 {
     ThreadPool* pool;
     int32_t* vals;
+    int err = 0;
 
     pool = thread_pool_create(num_threads);
-    vals = calloc(num_items, sizeof(*vals));
+
+    if (pool == NULL)
+    {
+        printf('ERROR: Could not create a thread pool.\n');
+        return EXIT_FAILURE;
+    }
+
+    vals = (int32_t*)calloc(num_items, sizeof(*vals));
+
+    if (vals == NULL)
+    {
+        printf('calloc error: %s\n', strerror(errno));
+        return EXIT_FAILURE;
+    }
     
     printf("Processing tasks:\n");
     for (size_t i = 0; i < num_items; i++)
     {
         vals[i] = i;
-        thread_pool_add_task(pool, process_task, vals + i);
+        if ((err = thread_pool_add_task(pool, process_task, vals + i) != 0)
+        {
+            printf('Error creating task %d: err %d\n', vals[i], err);
+        }
     }
 
-    thread_pool_wait(pool); 
-
-    printf("\nResults:\n");
-
-    for (size_t i = 0; i < num_items; i++)
+    if ((err = thread_pool_wait(pool) != 0)
     {
-        printf("%d ", vals[i]);
-        fflush(stdout);
+        printf('Error waiting for tasks: %d\n');
     }
-    printf("\n");
+    else
+    {
+        printf("\nResults:\n");
 
-    printf("Atomic counter = %d\n", counter);
+        for (size_t i = 0; i < num_items; i++)
+        {
+            printf("%d ", vals[i]);
+            fflush(stdout);
+        }
+
+        printf("\n");
+
+        printf("Atomic counter = %d\n", counter);
+    }
 
     free(vals);
 
-    thread_pool_destroy(pool);
+    if ((err = thread_pool_destroy(pool) != 0)
+    {
+        printf("Error destroying pool: %d\n", err);
+        return EXIT_FAILURE;
+    }
 
     return EXIT_SUCCESS;
 }
