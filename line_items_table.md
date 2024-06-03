@@ -16,9 +16,9 @@
   </tr>
   <tr>
     <td>[2.3](!12)</td>
-    <td>N/A (Title 10, Title 50, Title 18)</td>
+    <td>National CPT<br>DoDIN CPT<br>Combatant Command CPT<br>Service CPT</td>
     <td>docs</td>
-    <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
+    <td>[2-3-answers.md](/docs/2-3-answers.md)</td>
   </tr>
   <tr>
     <td>[6.8](!29)</td>
