@@ -1,4 +1,4 @@
-# 6.15 2.2 Describe the CPT Support Element and Mission Element and their capabilities
+# 2.2 Describe the CPT Support Element and Mission Element and their capabilities
 
 ### Objectives
 
