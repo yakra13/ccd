@@ -115,7 +115,7 @@
     <td>[7.9](!51)</td>
     <td>N/A (Parse command line args)</td>
     <td>src</td>
-    <td>[argparse.cs](/src/7.9/argparse.cs)<br>[output.txt](/src/7.9/output.txt)</td>
+    <td>[argparse.py](/src/7.9/argparse.py)<br>[output.txt](/src/7.9/output.txt)</td>
   </tr>
   <tr>
     <td>[8.2](!53)</td>
@@ -142,16 +142,66 @@
     <td>[9-2-answers.md](/docs/9-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[9.3](!60)</td>
+    <td>Merge sort<br>Selection sort<br>Insertion sort<br>Hashing<br>Heap sort<br>Quick sort</td>
+    <td>src</td>
+    <td>[sorting.py](/src/sorting.py)<br>[output.txt](/src/9.3/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[10.1](!61)</td>
+    <td>Processes<br>CPU scheduling<br>Paging tables<br>Caching<br>Kernel and user-mode memory</td>
+    <td>docs</td>
+    <td>[10-1-answers.md](/docs/10-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[10.2](!62)</td>
     <td>File systems<br>The boot process</td>
     <td>docs</td>
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[10.3](!63)</td>
+    <td>Signal handling<br>Interrupts</td>
+    <td>src</td>
+    <td>[signals.c](/src/10.3/signals.c)<br>[output.txt](/src/10.3/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[10.4](!64)</td>
+    <td>thread safe<br>thread id<br>Locking (mutex, semaphore, etc)<br>Threading (thread vs pthread)<br>fork<br>join<br>create<br>exit<br>detach<br>self<br>Race conditions<br>conditional variables<br>Deadlocks<br>atomics<br>Scheduling algorithms, i.e ., round robin, shortest job first, priority scheduling, etc.</td>
+    <td>docs</td>
+    <td>[10-4-answers.md](/docs/10-4-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[12.1](!68)</td>
+    <td>Transmission Control Protocol (TCP) / User Datagram Protocol (UDP)<br>Open Systems Interconnect (OSI) model<br>POSIX API/BSD sockets<br>Purpose and use of sockets<br>Request For Comments (RFCs)<br>Purpose of subnetting</td>
+    <td>docs</td>
+    <td>[12-1-answers.md](/docs/12-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[12.2](!69)</td>
     <td>Simple Mail Transfer Protocol (SMTP)<br>Internet Control Message Protocol (ICMP)<br>Dynamic Host Configuration Protocol (DHCP)<br>Internet Protocol version 4 (IPv4)<br>Internet Protocol version 6 (IPV6)<br>Address Resolution Protocol (ARP)<br>Hypertext Transfer Protocol/Secure (HTTP/HTTPS)<br>Domain Name System (DNS)</td>
     <td>docs</td>
     <td>[12-2-answers.md](/docs/12-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[12.5](!72)</td>
+    <td>WLAN<br>LAN<br>WAN<br>MAN<br>WWAN</td>
+    <td>docs</td>
+    <td>[12-5-answers.md](/docs/12-5-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[12.7](!74)</td>
+    <td>struct sockaddr_un<br>struct sockaddr_storage<br>socket()<br>gethostname()<br>send()<br>recv()<br>sendto()<br>recvfrom()<br>bind()<br>connect()<br>accept()<br>getsockopt()<br>setsockopt()<br>getaddrinfo()<br>struct sockaddr<br>struct sockaddr_in</td>
+    <td>[12.8](!75)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[common.h](/src/12.8/common.h)<br>[message.h](/src/12.8/message.h)<br>[client.c](/src/12.8/client.c)<br>[message.c](/src/12.8/message.c)<br>[server.c](/src/12.8/server.c)</td>
+  </tr>
+  <tr>
+    <td>[12.9](!76)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
     <td>[19.1](!107)</td>
