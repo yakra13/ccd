@@ -15,6 +15,12 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[3.2](!16)</td>
+    <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
+    <td>docs</td>
+    <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
+  </tr>
+  <tr>
     <td>[6.8](!29)</td>
     <td>Read data from a file<br>Write data to a file<br>Modify data in a file<br>Close an open file<br>Print file information to the console<br>Create a new file<br>Append data to an existing file<br>Delete a file<br>Determine the size of a file (in a UNIX-based operating system)<br>Determine location within a file<br>Insert data into an existing file<br>Open an existing file</td>
     <td>src</td>
