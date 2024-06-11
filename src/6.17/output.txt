@@ -1,0 +1,22 @@
+Vector a info:
+	1.500, 2.000, 2.000
+	Length: 3.202
+Vector b info:
+	2.500, 1.000, 0.000
+	Length: 2.693
+Add vector b to vector a
+Vector a info:
+	4.000, 3.000, 2.000
+	Length: 5.385
+Scale vector a by 2
+Vector a info:
+	8.000, 6.000, 4.000
+	Length: 10.770
+Rotate 90 degrees on X axis
+Vector a info:
+	8.000, -4.000, 6.000
+	Length: 10.770
+Normalize vector a
+Vector a info:
+	0.743, -0.371, 0.557
+	Length: 1.000
