@@ -140,6 +140,12 @@
     <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
   </tr>
   <tr>
+    <td>[8.4](!55)</td>
+    <td>Creating a hash table with n number of items<br>Navigating through a hash table to find the nth item<br>Finding an item in a hash table<br>Removing selected items from a hash table<br>Inserting an item into a hash table <br>Implement functionality to mitigate hash collisions within the hash table<br>Removing all items from the hash table</td>
+    <td>src</td>
+    <td>[run.py](/src/8.4/run.py)<br>[hash_table.py](/src/8.4/hash_table.py)<br>[output.txt](/src/8.4/output.txt)</td>
+  </tr>
+  <tr>
     <td>[8.6](!57)</td>
     <td>Defining the underlying structures required for priority queues (cannot be fixed sized)<br>Assigning a priority to each element<br>Inserting an element into the priority queue<br>Removing the element with the highest priority from the priority queue<br>Destroying a priority queue<br>Define possible applications of a priority queue</td>
     <td>src</td>
