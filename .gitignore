@@ -2,3 +2,7 @@
 *.ilk
 *.obj
 *.pdb
+*.o
+*.out
+__ignore__
+__pycache__

@@ -1,15 +1,8 @@
-"""8.4 Demonstrate skill in creating and using a hash table that accepts any data type
+from collections import deque
+from collections.abc import Hashable
+from typing import Any, Final, NamedTuple, Tuple
 
-Objectives
-
-- [ ] Creating a hash table with n number of items
-- [ ] Navigating through a hash table to find the nth item
-- [ ] Finding an item in a hash table
-- [ ] Removing selected items from a hash table
-- [ ] Inserting an item into a hash table 
-- [ ] Implement functionality to mitigate hash collisions within the hash table
-- [ ] Removing all items from the hash table
-"""
+MIN_HASH_TBL_CAP: Final[int] = 10
 
 class Pair(NamedTuple):
     key: Hashable
@@ -174,4 +167,3 @@ class HashTable():
         if 0 > index > len(self.keys):
             raise IndexError()
         return self.get(self.keys[index], default)
-
