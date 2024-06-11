@@ -214,6 +214,12 @@
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
+    <td>[12.10](!77)</td>
+    <td>poll<br>select</td>
+    <td>src</td>
+    <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
+  </tr>
+  <tr>
     <td>[19.1](!107)</td>
     <td>Provide user interface (GUI or CLI)<br>Provide documentation for capability<br>Apply software engineering best practices (CI/CD, virtualization, containerization)</td>
     <td>N/A</td>
