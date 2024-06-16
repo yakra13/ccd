@@ -1,3 +1,22 @@
+/*18.4 Demonstrate the ability to cross-compile an application for multiple architectures
+
+The makefile contains the cross-compilation logic along with mingw-gcc as the windows compiler
+and gcc for linux.
+
+
+sudo apt-get install gcc-mingw-w64
+
+
+Was tested under WSL2 using ubuntu on windows.
+Will produce executables for linux and windows. When run they will produce bitmap images
+that visualize the executables themselves.
+
+
+./lin-cross
+./win-cross.exe
+
+
+*/
 #include "bitmap.h"
 #include <inttypes.h>
 #include <math.h>

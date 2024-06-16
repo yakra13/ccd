@@ -214,6 +214,12 @@
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
+    <td>[18.4](!76)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[bitmap.h](/src/18.4/bitmap.h)<br>[cross_compile.c](/src/18.4/cross_compile.c)<br>[Makefile](/src/18.4/Makefile)</td>
+  </tr>
+  <tr>
     <td>[19.1](!107)</td>
     <td>Provide user interface (GUI or CLI)<br>Provide documentation for capability<br>Apply software engineering best practices (CI/CD, virtualization, containerization)</td>
     <td>N/A</td>
