@@ -3,3 +3,6 @@
 *.obj
 *.pdb
 *.out
+*.o
+__pycache__
+__ignore__
