@@ -15,6 +15,10 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[2.2](!11)</td>
+    <td>N/A (CPT Support Element, CPT Mission Element)</td>
+    <td>docs</td>
+    <td>[2-2-answers.md](/docs/2-2-answers.md)</td>
     <td>[2.4](!13)</td>
     <td>Cyber Operations Planner<br>Network Analyst<br>Host Analyst<br>Analytic Support Officer<br>Data Engineer<br>Network Technician<br>All-Source Analyst</td>
     <td>docs</td>
