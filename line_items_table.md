@@ -19,6 +19,10 @@
     <td>N/A (CPT Support Element, CPT Mission Element)</td>
     <td>docs</td>
     <td>[2-2-answers.md](/docs/2-2-answers.md)</td>
+    <td>[2.3](!12)</td>
+    <td>National CPT<br>DoDIN CPT<br>Combatant Command CPT<br>Service CPT</td>
+    <td>docs</td>
+    <td>[2-3-answers.md](/docs/2-3-answers.md)</td>
     <td>[2.4](!13)</td>
     <td>Cyber Operations Planner<br>Network Analyst<br>Host Analyst<br>Analytic Support Officer<br>Data Engineer<br>Network Technician<br>All-Source Analyst</td>
     <td>docs</td>
