@@ -27,6 +27,10 @@
     <td>Cyber Operations Planner<br>Network Analyst<br>Host Analyst<br>Analytic Support Officer<br>Data Engineer<br>Network Technician<br>All-Source Analyst</td>
     <td>docs</td>
     <td>[2-4-answers.md](/docs/2-4-answers.md)</td>
+    <td>[3.1](!15)</td>
+    <td>N/A (Difference between conducting C-ISR and C-SR)</td>
+    <td>docs</td>
+    <td>[3-1-answers.md](/docs/3-1-answers.md)</td>
     <td>[3.2](!16)</td>
     <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
     <td>docs</td>
