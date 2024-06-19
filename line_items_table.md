@@ -15,10 +15,22 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[2.2](!11)</td>
+    <td>N/A (CPT Support Element, CPT Mission Element)</td>
+    <td>docs</td>
+    <td>[2-2-answers.md](/docs/2-2-answers.md)</td>
+    <td>[2.3](!12)</td>
+    <td>National CPT<br>DoDIN CPT<br>Combatant Command CPT<br>Service CPT</td>
+    <td>docs</td>
+    <td>[2-3-answers.md](/docs/2-3-answers.md)</td>
     <td>[2.4](!13)</td>
     <td>Cyber Operations Planner<br>Network Analyst<br>Host Analyst<br>Analytic Support Officer<br>Data Engineer<br>Network Technician<br>All-Source Analyst</td>
     <td>docs</td>
     <td>[2-4-answers.md](/docs/2-4-answers.md)</td>
+    <td>[3.1](!15)</td>
+    <td>N/A (Difference between conducting C-ISR and C-SR)</td>
+    <td>docs</td>
+    <td>[3-1-answers.md](/docs/3-1-answers.md)</td>
     <td>[3.2](!16)</td>
     <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
     <td>docs</td>
@@ -180,6 +192,12 @@
     <td>thread safe<br>thread id<br>Locking (mutex, semaphore, etc)<br>Threading (thread vs pthread)<br>fork<br>join<br>create<br>exit<br>detach<br>self<br>Race conditions<br>conditional variables<br>Deadlocks<br>atomics<br>Scheduling algorithms, i.e ., round robin, shortest job first, priority scheduling, etc.</td>
     <td>docs</td>
     <td>[10-4-answers.md](/docs/10-4-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[11.1](!66)</td>
+    <td>Common string-handling functions<br>Which functions guarantee null terminated strings<br>An off-by-one error<br>An integer overflow<br>A buffer overflow<br>The concept of use-after-free<br>Resource acquisition is initialization (RAII)<br>The difference between input validation vs. input sanitization<br>General low-level crypto basics (e.g. different encryption schemes and how you might implement them system wide, what crypto is better for different use cases)<br>Penetration testing principles, tools, and techniques<br>Obfuscation techniques<br>The meaning of a pure function and if a function has a side-effect</td>
+    <td>docs</td>
+    <td>[11-1-answers.md](/docs/11-1-answers.md)</td>
   </tr>
   <tr>
     <td>[12.1](!68)</td>
