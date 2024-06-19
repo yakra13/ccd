@@ -23,7 +23,14 @@ that visualize the executables themselves.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 
+#ifdef _WIN32
+#include <direct.h>
+#define stat _stat
+#elif __linux__
+#include <unistd.h>
+#endif
 
 static const char* WIN_IN_FILE = "win-cross.exe";
 static const char* LIN_IN_FILE = "lin-cross";
@@ -114,11 +121,12 @@ long ReadFileBytes(const char* filename, uint8_t** out_buffer)
     return file_size;
 }
 
-bool TryTheThing(const char* inFile, const char* outFile)
+bool ConvertFileToBitmap(const char* inFile, const char* outFile)
 {
     uint8_t* bytes_buffer = NULL;
     long bytes_read = 0;
 
+    // Read the bytes from the file
     if ((bytes_read = ReadFileBytes(inFile, &bytes_buffer)) == 0)
         return false;
 
@@ -128,9 +136,12 @@ bool TryTheThing(const char* inFile, const char* outFile)
         return false;
     }
 
+    // Determine the dimensions of the image based on the total number of bytes read
     int32_t side_length = (int32_t)ceil(sqrt((double)bytes_read));
+    // Bitmap rows are 4 byte aligned and must be padded if necessary
     uint32_t paddingPerRow = (4 - (side_length * 3) % 4) % 4;
 
+    // Store data about the bitmap to be created
     PixelData pixelData =
     {
         .width = side_length,
@@ -148,7 +159,7 @@ bool TryTheThing(const char* inFile, const char* outFile)
     }
 
     int32_t bufferIndex = bytes_read - 1;
-
+    // Iterate thru the bytes and assign the values to the pixel color data (just green right now for simplicity)
     for (int32_t i = pixelData.count - 1; i >= 0; i--)
     {
         uint8_t c = bufferIndex >= 0 ? bytes_buffer[bufferIndex] : 0;
@@ -159,6 +170,7 @@ bool TryTheThing(const char* inFile, const char* outFile)
 
         bufferIndex--;
 
+        // Detect the end of a row of pixels and add padding if needed
         if (i % pixelData.width == 0)
         {
             for (int32_t pad = 0; pad < paddingPerRow; pad++)
@@ -172,14 +184,7 @@ bool TryTheThing(const char* inFile, const char* outFile)
         }
     }
     
-    for (uint32_t i = 0; i < pixelData.count; i++)
-    {
-        uint8_t c = i < (uint32_t)bytes_read ? bytes_buffer[i] : 0;
-
-        pixelData.pixels[i].blue = 0;
-        pixelData.pixels[i].green = c;
-        pixelData.pixels[i].red = 0;
-    }
+    free(bytes_buffer);
 
     if (CreateBitmapFile(outFile, &pixelData) == false)
     {
@@ -193,12 +198,30 @@ bool TryTheThing(const char* inFile, const char* outFile)
     return true;
 }
 
-int32_t main()
+int32_t main(int32_t argc, char** argv)
 {
-    if (TryTheThing(LIN_IN_FILE, LIN_OUT_FILE) == false)
+    // If a valid file path is passed in convert that file. Else do the defaults.
+    if (argc == 2)
+    {
+        const char* filePath = argv[1];
+        struct stat buffer;
+
+        if (stat(filePath, &buffer) == 0)
+        {
+            if (ConvertFileToBitmap(filePath, "custom.bmp") == false)
+                return EXIT_FAILURE;
+            
+            return EXIT_SUCCESS;
+        }
+        printf("File %s does not exist.\n", filePath);
+        return EXIT_FAILURE;
+    }
+    // Create a bitmap image of each executable where each pixel represents the bytes
+    // in the executable (0 = black 255 = full color)
+    if (ConvertFileToBitmap(LIN_IN_FILE, LIN_OUT_FILE) == false)
         return EXIT_FAILURE;
 
-    if (TryTheThing(WIN_IN_FILE, WIN_OUT_FILE) == false)
+    if (ConvertFileToBitmap(WIN_IN_FILE, WIN_OUT_FILE) == false)
         return EXIT_FAILURE;
 
     return EXIT_SUCCESS;

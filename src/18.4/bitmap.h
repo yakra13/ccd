@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+// Guarantee that no padding will be placed in these structs
 #pragma pack(push, 1)
 typedef struct {
     uint16_t type;
