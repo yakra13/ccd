@@ -232,6 +232,12 @@
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
+    <td>[15.8](!93)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
+  </tr>
+  <tr>
     <td>[19.1](!107)</td>
     <td>Provide user interface (GUI or CLI)<br>Provide documentation for capability<br>Apply software engineering best practices (CI/CD, virtualization, containerization)</td>
     <td>N/A</td>
