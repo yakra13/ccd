@@ -1,18 +1,23 @@
 #include <regex.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-int32_t main()
+int main()
 {
     // Capture group pattern
     const char* pattern = "(\\w+)@(\\w+)\\.(\\w+)";
     const char* sample = "example@test.com";
     char* output_buffer = (char*)calloc(256, sizeof(char));
 
+    if (output_buffer == NULL)
+    {
+        printf("Calloc fail.\n");
+        exit(EXIT_FAILURE);
+    }
+
     regex_t regex;
     regmatch_t matches[4];
-    int32_t regex_result;
+    int regex_result;
 
     // Compile the regular expression
     regex_result = regcomp(&regex, pattern, REG_EXTENDED);
@@ -36,7 +41,7 @@ int32_t main()
             if (matches[i].rm_so != -1)
             {
                 // Get the length of the match string
-                int32_t l = matches[i].rm_eo - matches[i].rm_so;
+                int l = matches[i].rm_eo - matches[i].rm_so;
                 // Copy the string to output buffer
                 snprintf(output_buffer, l + 1, "%.*s", l, sample + matches[i].rm_so);
                 printf("Group %d: %s\n", i, output_buffer);
