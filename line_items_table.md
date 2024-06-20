@@ -232,6 +232,12 @@
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
+    <td>[14.2](!84)</td>
+    <td>Use of capture groups<br>Matching</td>
+    <td>src</td>
+    <td>[regex.c](/src/14.2/regex.c)<br>[output.txt](/src/14.2/output.txt)</td>
+  </tr>
+  <tr>
     <td>[15.8](!93)</td>
     <td>N/A</td>
     <td>docs</td>
