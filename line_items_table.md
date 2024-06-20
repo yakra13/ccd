@@ -194,6 +194,12 @@
     <td>[10-4-answers.md](/docs/10-4-answers.md)</td>
   </tr>
   <tr>
+    <td>[10.5](!65)</td>
+    <td>Threads<br>Locks<br>Condition variables<br>Atomics<br>Thread Pool (with graceful shutdown without memory leaks)</td>
+    <td>src</td>
+    <td>[concurrency.c](/src/10.5/concurrency.c)<br>[threadpool.h](/src/10.5/threadpool.h)<br>[threadpool.c](/src/10.5/threadpool.c)<br>[output.txt](/src/10.5/output.txt)<br>[Makefile](/src/10.5/Makefile)</td>
+  </tr>
+  <tr>
     <td>[11.1](!66)</td>
     <td>Common string-handling functions<br>Which functions guarantee null terminated strings<br>An off-by-one error<br>An integer overflow<br>A buffer overflow<br>The concept of use-after-free<br>Resource acquisition is initialization (RAII)<br>The difference between input validation vs. input sanitization<br>General low-level crypto basics (e.g. different encryption schemes and how you might implement them system wide, what crypto is better for different use cases)<br>Penetration testing principles, tools, and techniques<br>Obfuscation techniques<br>The meaning of a pure function and if a function has a side-effect</td>
     <td>docs</td>
