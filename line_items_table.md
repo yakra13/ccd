@@ -15,6 +15,28 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[2.2](!11)</td>
+    <td>N/A (CPT Support Element, CPT Mission Element)</td>
+    <td>docs</td>
+    <td>[2-2-answers.md](/docs/2-2-answers.md)</td>
+    <td>[2.3](!12)</td>
+    <td>National CPT<br>DoDIN CPT<br>Combatant Command CPT<br>Service CPT</td>
+    <td>docs</td>
+    <td>[2-3-answers.md](/docs/2-3-answers.md)</td>
+    <td>[2.4](!13)</td>
+    <td>Cyber Operations Planner<br>Network Analyst<br>Host Analyst<br>Analytic Support Officer<br>Data Engineer<br>Network Technician<br>All-Source Analyst</td>
+    <td>docs</td>
+    <td>[2-4-answers.md](/docs/2-4-answers.md)</td>
+    <td>[3.1](!15)</td>
+    <td>N/A (Difference between conducting C-ISR and C-SR)</td>
+    <td>docs</td>
+    <td>[3-1-answers.md](/docs/3-1-answers.md)</td>
+    <td>[3.2](!16)</td>
+    <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
+    <td>docs</td>
+    <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
+  </tr>
+  <tr>
     <td>[6.8](!29)</td>
     <td>Read data from a file<br>Write data to a file<br>Modify data in a file<br>Close an open file<br>Print file information to the console<br>Create a new file<br>Append data to an existing file<br>Delete a file<br>Determine the size of a file (in a UNIX-based operating system)<br>Determine location within a file<br>Insert data into an existing file<br>Open an existing file</td>
     <td>src</td>
@@ -148,10 +170,22 @@
     <td>[sorting.py](/src/sorting.py)<br>[output.txt](/src/9.3/output.txt)</td>
   </tr>
   <tr>
+    <td>[10.1](!61)</td>
+    <td>Processes<br>CPU scheduling<br>Paging tables<br>Caching<br>Kernel and user-mode memory</td>
+    <td>docs</td>
+    <td>[10-1-answers.md](/docs/10-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[10.2](!62)</td>
     <td>File systems<br>The boot process</td>
     <td>docs</td>
     <td>[10-2-answers.md](/docs/10-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[10.3](!63)</td>
+    <td>Signal handling<br>Interrupts</td>
+    <td>src</td>
+    <td>[signals.c](/src/10.3/signals.c)<br>[output.txt](/src/10.3/output.txt)</td>
   </tr>
   <tr>
     <td>[10.4](!64)</td>
@@ -164,6 +198,12 @@
     <td>Threads<br>Locks<br>Condition variables<br>Atomics<br>Thread Pool (with graceful shutdown without memory leaks)</td>
     <td>src</td>
     <td>[concurrency.c](/src/10.5/concurrency.c)<br>[threadpool.h](/src/10.5/threadpool.h)<br>[threadpool.c](/src/10.5/threadpool.c)<br>[output.txt](/src/10.5/output.txt)<br>[Makefile](/src/10.5/Makefile)</td>
+  </tr>
+  <tr>
+    <td>[11.1](!66)</td>
+    <td>Common string-handling functions<br>Which functions guarantee null terminated strings<br>An off-by-one error<br>An integer overflow<br>A buffer overflow<br>The concept of use-after-free<br>Resource acquisition is initialization (RAII)<br>The difference between input validation vs. input sanitization<br>General low-level crypto basics (e.g. different encryption schemes and how you might implement them system wide, what crypto is better for different use cases)<br>Penetration testing principles, tools, and techniques<br>Obfuscation techniques<br>The meaning of a pure function and if a function has a side-effect</td>
+    <td>docs</td>
+    <td>[11-1-answers.md](/docs/11-1-answers.md)</td>
   </tr>
   <tr>
     <td>[12.1](!68)</td>
@@ -182,6 +222,32 @@
     <td>WLAN<br>LAN<br>WAN<br>MAN<br>WWAN</td>
     <td>docs</td>
     <td>[12-5-answers.md](/docs/12-5-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[12.7](!74)</td>
+    <td>struct sockaddr_un<br>struct sockaddr_storage<br>socket()<br>gethostname()<br>send()<br>recv()<br>sendto()<br>recvfrom()<br>bind()<br>connect()<br>accept()<br>getsockopt()<br>setsockopt()<br>getaddrinfo()<br>struct sockaddr<br>struct sockaddr_in</td>
+    <td>[12.8](!75)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[common.h](/src/12.8/common.h)<br>[message.h](/src/12.8/message.h)<br>[client.c](/src/12.8/client.c)<br>[message.c](/src/12.8/message.c)<br>[server.c](/src/12.8/server.c)</td>
+  </tr>
+  <tr>
+    <td>[12.9](!76)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
+  </tr>
+  <tr>
+    <td>[14.2](!84)</td>
+    <td>Use of capture groups<br>Matching</td>
+    <td>src</td>
+    <td>[regex.c](/src/14.2/regex.c)<br>[output.txt](/src/14.2/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[15.8](!93)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
   </tr>
   <tr>
     <td>[19.1](!107)</td>

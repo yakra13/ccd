@@ -1,0 +1,12 @@
+Address m1: 0x0000022088F31150
+Address m2: 0x0000022088F31310
+Navigate from m1 memory location to m2 memory location.
+Arrived at m2
+address m1(ptr): 0x0000022088F31310
+address m2     : 0x0000022088F31310
+spots: 110
+If we made it here that means we looked at 110 unallocated memory addresses.
+So now provide 3 Ctrl+C interrupts to exit.
+Ctrl+C has been pressed 1 times.
+Ctrl+C has been pressed 2 times.
+Ctrl+C has been pressed 3 times.

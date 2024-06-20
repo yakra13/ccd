@@ -1,0 +1,5 @@
+Match found:
+Group 0: example@test.com
+Group 1: example
+Group 2: test
+Group 3: com
