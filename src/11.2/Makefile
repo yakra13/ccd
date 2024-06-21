@@ -1,7 +1,9 @@
 CC=gcc
-OUT=rebin
-IN=rebin.c
-
+OUT=secure_code
+IN=secure_code.c
 
 make: $(OUT)
 	$(CC) -Wall -Wfatal-errors -o $(OUT) $(IN)
+
+clean:
+	rm -f $(OUT)
