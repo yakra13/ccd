@@ -37,6 +37,12 @@
     <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[4.3](!19)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-3-answers.md](/docs/4-3-answers.md)</td>
+  </tr>
+  <tr>
     <td>[6.8](!29)</td>
     <td>Read data from a file<br>Write data to a file<br>Modify data in a file<br>Close an open file<br>Print file information to the console<br>Create a new file<br>Append data to an existing file<br>Delete a file<br>Determine the size of a file (in a UNIX-based operating system)<br>Determine location within a file<br>Insert data into an existing file<br>Open an existing file</td>
     <td>src</td>
