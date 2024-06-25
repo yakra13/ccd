@@ -15,14 +15,32 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[2.2](!11)</td>
+    <td>N/A (CPT Support Element, CPT Mission Element)</td>
+    <td>docs</td>
+    <td>[2-2-answers.md](/docs/2-2-answers.md)</td>
+    <td>[2.3](!12)</td>
+    <td>National CPT<br>DoDIN CPT<br>Combatant Command CPT<br>Service CPT</td>
+    <td>docs</td>
+    <td>[2-3-answers.md](/docs/2-3-answers.md)</td>
     <td>[2.4](!13)</td>
     <td>Cyber Operations Planner<br>Network Analyst<br>Host Analyst<br>Analytic Support Officer<br>Data Engineer<br>Network Technician<br>All-Source Analyst</td>
     <td>docs</td>
     <td>[2-4-answers.md](/docs/2-4-answers.md)</td>
+    <td>[3.1](!15)</td>
+    <td>N/A (Difference between conducting C-ISR and C-SR)</td>
+    <td>docs</td>
+    <td>[3-1-answers.md](/docs/3-1-answers.md)</td>
     <td>[3.2](!16)</td>
     <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
     <td>docs</td>
     <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[4.3](!19)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-3-answers.md](/docs/4-3-answers.md)</td>
   </tr>
   <tr>
     <td>[6.8](!29)</td>
@@ -140,6 +158,12 @@
     <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
   </tr>
   <tr>
+    <td>[8.4](!55)</td>
+    <td>Creating a hash table with n number of items<br>Navigating through a hash table to find the nth item<br>Finding an item in a hash table<br>Removing selected items from a hash table<br>Inserting an item into a hash table <br>Implement functionality to mitigate hash collisions within the hash table<br>Removing all items from the hash table</td>
+    <td>src</td>
+    <td>[run.py](/src/8.4/run.py)<br>[hash_table.py](/src/8.4/hash_table.py)<br>[output.txt](/src/8.4/output.txt)</td>
+  </tr>
+  <tr>
     <td>[8.6](!57)</td>
     <td>Defining the underlying structures required for priority queues (cannot be fixed sized)<br>Assigning a priority to each element<br>Inserting an element into the priority queue<br>Removing the element with the highest priority from the priority queue<br>Destroying a priority queue<br>Define possible applications of a priority queue</td>
     <td>src</td>
@@ -182,6 +206,18 @@
     <td>[10-4-answers.md](/docs/10-4-answers.md)</td>
   </tr>
   <tr>
+    <td>[10.5](!65)</td>
+    <td>Threads<br>Locks<br>Condition variables<br>Atomics<br>Thread Pool (with graceful shutdown without memory leaks)</td>
+    <td>src</td>
+    <td>[concurrency.c](/src/10.5/concurrency.c)<br>[threadpool.h](/src/10.5/threadpool.h)<br>[threadpool.c](/src/10.5/threadpool.c)<br>[output.txt](/src/10.5/output.txt)<br>[Makefile](/src/10.5/Makefile)</td>
+  </tr>
+  <tr>
+    <td>[11.1](!66)</td>
+    <td>Common string-handling functions<br>Which functions guarantee null terminated strings<br>An off-by-one error<br>An integer overflow<br>A buffer overflow<br>The concept of use-after-free<br>Resource acquisition is initialization (RAII)<br>The difference between input validation vs. input sanitization<br>General low-level crypto basics (e.g. different encryption schemes and how you might implement them system wide, what crypto is better for different use cases)<br>Penetration testing principles, tools, and techniques<br>Obfuscation techniques<br>The meaning of a pure function and if a function has a side-effect</td>
+    <td>docs</td>
+    <td>[11-1-answers.md](/docs/11-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[12.1](!68)</td>
     <td>Transmission Control Protocol (TCP) / User Datagram Protocol (UDP)<br>Open Systems Interconnect (OSI) model<br>POSIX API/BSD sockets<br>Purpose and use of sockets<br>Request For Comments (RFCs)<br>Purpose of subnetting</td>
     <td>docs</td>
@@ -218,6 +254,24 @@
     <td>poll<br>select</td>
     <td>src</td>
     <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[14.2](!84)</td>
+    <td>Use of capture groups<br>Matching</td>
+    <td>src</td>
+    <td>[regex.c](/src/14.2/regex.c)<br>[output.txt](/src/14.2/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[15.8](!93)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[18.4](!76)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[bitmap.h](/src/18.4/bitmap.h)<br>[cross_compile.c](/src/18.4/cross_compile.c)<br>[Makefile](/src/18.4/Makefile)<br>[example.bmp](/src/18.4/example.bmp)</td>
   </tr>
   <tr>
     <td>[19.1](!107)</td>
