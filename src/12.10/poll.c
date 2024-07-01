@@ -1,4 +1,3 @@
-#include <errno.h>
 #include <poll.h>
 #include <fcntl.h>
 #include <stdint.h>
@@ -7,23 +6,34 @@
 #include <string.h>
 #include <unistd.h>
 
-static const int32_t TIME_OUT = 5;
+static const int TIME_OUT = 5;
 static const char* file_1 = "file_1.txt";
 static const char* file_2 = "file_2.txt";
 
-int32_t main()
+int main()
 {
     // Array of pollfd with number of files to be polled.
-    struct pollfd fds[2];
-    int32_t poll_result;
+    struct pollfd fds[2] = {0};
+    int poll_result;
+    int fd_1, fd_2 = 0;
+
+    // Zero out pollfd
+    memset(&fds[0], 0, sizeof(struct pollfd));
+    memset(&fds[1], 0, sizeof(struct pollfd));
 
     // Open the files in read only non-blocking for use in poll().
-    int32_t fd_1 = open(file_1, O_RDONLY | O_NONBLOCK);
-    int32_t fd_2 = open(file_2, O_RDONLY | O_NONBLOCK);
-
     // Fail out on open errors.
-    if (fd_1 < 0 || fd_2 < 0)
+    fd_1 = open(file_1, O_RDONLY | O_NONBLOCK);
+    if (fd_1 < 0)
     {
+        perror("open");
+        exit(EXIT_FAILURE);
+    }
+
+    fd_2 = open(file_2, O_RDONLY | O_NONBLOCK);
+    if (fd_2 < 0)
+    {
+        close(fd_1);
         perror("open");
         exit(EXIT_FAILURE);
     }
@@ -41,36 +51,47 @@ int32_t main()
     if (poll_result == -1)
     {
         perror("poll");
+        close(fd_1);
+        close(fd_2);
         exit(EXIT_FAILURE);
     }
     else if (poll_result == 0)
     {
         printf("No data received within %d seconds.\n", TIME_OUT);
+        close(fd_1);
+        close(fd_2);
+        exit(EXIT_FAILURE);
     }
     else
     {
         char c;
-        FILE* f;
+        FILE* f_stream;
         // Print the files with POLLIN events.
         for (int32_t i = 0; i < 2; i++)
         {
-            if (!fds[i].revents & POLLIN)
+            if (!(fds[i].revents & POLLIN))
                 continue;
 
             printf("Printing %s.\n", i == 0 ? file_1 : file_2);
 
             // Get the file stream
-            f = fdopen(fds[i].fd, "r");
+            f_stream = fdopen(fds[i].fd, "r");
+            if (f_stream == NULL)
+            {
+                printf("Error opening file.\n");
+                close(fd_1);
+                close(fd_2);
+                exit(EXIT_FAILURE);
+            }
 
-            while((c = fgetc(f)) != EOF)
+            while((c = fgetc(f_stream)) != EOF)
                 putchar(c);
 
             putchar('\n');
+
+            fclose(f_stream);
         }
     }
-
-    close(fd_1);
-    close(fd_2);
 
     return EXIT_SUCCESS;
 }
