@@ -250,6 +250,12 @@
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
   </tr>
   <tr>
+    <td>[12.10](!77)</td>
+    <td>poll<br>select</td>
+    <td>src</td>
+    <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
+  </tr>
+  <tr>
     <td>[14.2](!84)</td>
     <td>Use of capture groups<br>Matching</td>
     <td>src</td>
