@@ -1,24 +1,13 @@
 #include "zmath.h"
 #include <math.h>
 
-double lerp(double start, double end, double t)
+float lerp(float start, float end, float t)
 {
-    if (t >= 1.0)
-        return end;
-    
-    if (t <= 0.0)
-        return start;
-
-    double range = fabs(start) + fabs(end);
-
-    // Check if the range is being treated in reverse
-    if (start > end)
-        range *= -1;
-
-    return start + range * t;
+    // ((1 - t) * start) + (end * t) // slower more precise
+    return start + (end - start) * t;
 }
 
-double clamp(double min, double max, double value)
+float clamp(float min, float max, float value)
 {
     if (value < min)
         return min;
@@ -29,44 +18,19 @@ double clamp(double min, double max, double value)
     return value;
 }
 
-double p_distance(Point a, Point b)
+float p_distance(Point a, Point b)
 {
-    double x = b.x - a.x;
-    double y = b.y - a.y;
+    float x = b.x - a.x;
+    float y = b.y - a.y;
 
     return sqrt((x * x) + (y * y));
 }
 
+void p_lerp(Point start, Point end, float t, Point* point)
+{
+    float x = lerp(start.x, end.x, t);
+    float y = lerp(start.y, end.y, t);
 
-// ---Warfighting Capability Development Process---
-// Concept Refinement:
-
-// New requirement (CERF)
-// Major modification
-// Check Cyber Capability Registry (CCR)
-// Enter in RMS
-
-// Technology Development:
-
-// R & D
-// Assess Technology Readiness Level (TRL)
-// Initial CCR entry
-// Capability Champion
-
-// Capability Development and Demonstration:
-
-// Cape Development Milestone
-// Design Readiness Milestone
-// Developmental Test and Eval (DT&E)
-
-// Production and Deployment:
-
-// Initial Operational Capability
-// Acceptance Test
-// Operational Test and Eval (OT&E)
-
-// Operations and Support:
-
-// Full Ops Capability
-// Status of Resources and Training (SORTS)
-// Develop TTPs
+    point->x = x;
+    point->y = y;
+}

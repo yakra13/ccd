@@ -1,10 +1,12 @@
 #pragma once
+
 typedef struct
 {
-    double x;
-    double y;
+    float x;
+    float y;
 } Point;
 
-double lerp(double start, double end, double t);
-double clamp(double min, double max, double value);
-double p_distance(Point a, Point b);
+float lerp(float start, float end, float t);
+float clamp(float min, float max, float value);
+float p_distance(Point a, Point b);
+void p_lerp(Point start, Point end, float t, Point* point);
