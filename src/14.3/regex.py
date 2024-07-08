@@ -6,29 +6,33 @@ Objectives
 - [ ] Use of capture groups
 """
 import re
+from typing import Final
 
-def regex_str(cls, pattern: str = REGEX_PASSWORD):
-        """Validates that a string conforms to a regex pattern.
-        
-        Args:
-            pattern: A regex pattern to match
-        
-        Raises:
-            RuntimeError: start() was not called first
-            TypeError: The variable is not a valid type (str)
-            ValueError: The variable does not match the pattern
-        """
-        if cls._variable is None:
-            raise RuntimeError('start() method must be called first')
+# - [ ] Use of capture groups
+REGEX_PASSWORD: Final[str] = r"^(?=.*([a-z]))(?=.*([A-Z]))(?=.*(\d))(?=.*([@$!%*?&]))([A-Za-z\d@$!%*?&\s]{8,})+$"
 
-        pattern = re.compile(pattern)
+def regex_str(input_string: str):
+    """Validates that a string conforms to a regex pattern.
+    In this case a password complexity pattern of minimum 8 characters.
+    
+    Args:
+        input_string: a string to match against the regex
+    """
+    pattern = re.compile(REGEX_PASSWORD)
+    m = pattern.match(input_string)
+    if not m:
+        print(f'\'{input_string}\' does not match')
+    else:
+        print(f'\'{input_string}\' does match')
+        print(f'\tlower case: {m.group(1)}')
+        print(f'\tupper case: {m.group(2)}')
+        print(f'\tdigit: {m.group(3)}')
+        print(f'\tspecial character: {m.group(4)}')
+        print(f'\tfull match: {m.group(5)}')
 
-        try:
-            if not bool(pattern.match(cls._variable)):
-                err = f'{cls._var_name} does not match {pattern}'
-                cls._reset()
-                raise ValueError(err)
-        except TypeError as exc:
-            raise TypeError('Only str are valid for str_contains_chars()') from exc
-
-        return cls
+if __name__ == '__main__':
+    regex_str('invalid pass')
+    regex_str('InValId PasS')
+    regex_str('InVal1d Pas5')
+    regex_str('iNV@l1d')
+    regex_str('V@l1dP@s5')
