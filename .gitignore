@@ -4,5 +4,6 @@
 *.pdb
 *.o
 *.out
+*.so
 __ignore__
 __pycache__

@@ -1,18 +1,20 @@
-# gcc -c zmath.c -o zmath.o -lm
-# gcc -c main.c -o main.o
+CC_WINDOWS = i686-w64-mingw32-gcc-win32 
 
-# gcc main.o zmath.o -o test
+WARNINGS = -Werror -Wfatal-errors -Wpedantic
+FLAGS = -fPIC -lm
 
-CC = gcc
-CFLAGS = -Wall
-LDFLAGS = -lm
-OBJFILES = zmath.o main.o
-TARGET = test
 
-all: $(TARGET)
+out_exe: main.o zmath.so
+	$(CC_WINDOWS) $(WARNINGS) -o out.exe main.o zmath.so
 
-$(TARGET): $(OBJFILES)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJFILES) $(LDFLAGS)
+main.o: main.c
+	$(CC_WINDOWS) $(WARNINGS) -c main.c
+
+zmath.so: zmath.o
+	$(CC_WINDOWS) $(WARNINGS) -shared -o zmath.so zmath.o
+
+zmath.o: zmath.c
+	$(CC_WINDOWS) $(WARNINGS) -fPIC -lm -c zmath.c
 
 clean:
-	rm -f $(OBJFILES) $(TARGET)
+	rm -f *.o *.exe *.so

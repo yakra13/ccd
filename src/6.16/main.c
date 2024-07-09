@@ -7,83 +7,41 @@ Objectives
 - [ ] Compile position-independent code using a cross-compiler
 
 */
-#define _POSIX_C_SOURCE 199309L
+
 #include <stdio.h>
-#include <time.h>
-// #include <unistd.h> // For usleep function
 #include "zmath.h"
 
-// double get_time_in_miliseconds() 
-// {
-//     return (double)clock() / CLOCKS_PER_SEC * 1000;
-// }
-
-double get_elapsed_time(clock_t startTime) 
-{
-    return ((double)(clock() - startTime) / CLOCKS_PER_SEC) * 1000.0;
-}
-
-double get_time_in_milliseconds()
- {
-    struct timespec spec;
-    clock_gettime(CLOCK_MONOTONIC, &spec);
-    return spec.tv_sec * 1000 + spec.tv_nsec / 1000000;
-}
+// - [ ] Create a program using the compilation and linking process
+// - [ ] Compile position-independent code using a cross-compiler
+// See the makefile for these objectives
 
 int main()
 {
-    Point startingPosition = { .x = 0.0f, .y = 0.0f };
-    Point endingPosition = { .x = 30.0f, .y = -20.0f };
+    Point pointA = { .x = 0.0f, .y = 0.0f };
+    Point pointB = { .x = 30.0f, .y = -20.0f };
 
-    Point point = { .x = 0.0f, .y = 0.0f };
+    Point midpoint = { .x = 0.0f, .y = 0.0f };
 
-    // clock_t startTime = clock();
+    // Find length of the line AB
+    float lineLength = p_distance(pointA, pointB);
 
-    double duration = 5000.0; // in ms
-    double elapsedTime = 0.0;
+    // Find mid point of line AB
+    p_lerp(pointA, pointB, 0.5f, &midpoint);
 
-    double preTime = get_time_in_milliseconds();
-    double curTime = get_time_in_milliseconds();
-
-    double deltaTime = curTime - preTime;
-
-    // Get the start time
-    // double e =  get_elapsed_time(startTime);
-
-    float t = 0.0f;
-    printf("\n");
-    while (elapsedTime / 1000 < duration)
-    {
-         // Get the current time
-        curTime = get_time_in_milliseconds();
-        
-
-        // Calculate the elapsed time
-        t = (float)(elapsedTime / duration);
-        // double frm = get_elapsed_time(startTime);
-
-        p_lerp(startingPosition, endingPosition, t, &point);
-
-        // printf("\r\033[A%02.0f:%02.0f  \nX: %.5f Y: %.5f",
-        //     elapsedTime / 1000 / 60, elapsedTime / 1000,
-        //     point.x, point.y); //duration / 1000
-        
-        // frm = get_elapsed_time(startTime) - frm;
-        // printf(" frame time: %.10f", frm);
-        // Flush the output to ensure it is printed immediately
-        printf("\rcur: %.5f   ", elapsedTime);
-        fflush(stdout);
-        
-        // e =  get_elapsed_time(startTime);
-        deltaTime = curTime - preTime;
-        elapsedTime += deltaTime;
-        // Update the previous time
-        preTime = curTime;
-
-        // usleep(2000000); // Sleep for 2,000,000 microseconds (2 seconds)
-    }
-
-    printf("\n");
+    printf("Point A: %.2f, %.2f\n", pointA.x, pointA.y);
+    printf("Point B: %.2f, %.2f\n", pointB.x, pointB.y);
+    printf("Length: %.2f\n", lineLength);
+    printf("Midpoint: %.2f, %.2f\n", midpoint.x, midpoint.y);
 
     return 0;
 }
+
+// - [ ] Execute a program in a debugger to perform general debugging actions
+/*
+Debugging was performed in vscode.
+This is fairly simple code and did not require actual debugging however I created a fake bug 
+where midpoint was null and used the debugger to step thru and find the issue.
+Actions used such as setting a break point. Stepping line by line to check values as they
+were updated. Other possible actions in a debugger are viewing the call stack, setting watches
+on variables, memory monitoring, disassembly view, etc.
+*/
