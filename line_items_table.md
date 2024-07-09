@@ -200,6 +200,12 @@
     <td>[11-1-answers.md](/docs/11-1-answers.md)</td>
   </tr>
   <tr>
+    <td>[11.2](!67)</td>
+    <td>Formatting string vulnerabilities<br>Safe buffer size allocation<br>Input sanitization<br>Input validation<br>Establish a secure communications channel using an SSL library<br>Securely zeroing-out memory (compiler optimizations)</td>
+    <td>src</td>
+    <td>[secure_code.c](/src/11.2/secure_code.c)<br>[ssl_example.py](/src/11.2/ssl_example.py)</td>
+  </tr>
+  <tr>
     <td>[12.1](!68)</td>
     <td>Transmission Control Protocol (TCP) / User Datagram Protocol (UDP)<br>Open Systems Interconnect (OSI) model<br>POSIX API/BSD sockets<br>Purpose and use of sockets<br>Request For Comments (RFCs)<br>Purpose of subnetting</td>
     <td>docs</td>

@@ -7,6 +7,7 @@ Objectives
 - [x] Input sanitization
 - [x] Input validation
 - [x] Establish a secure communications channel using an SSL library
+    *** see ssl_example.py
 - [x] Securely zeroing-out memory (compiler optimizations)
 
 */
@@ -87,7 +88,7 @@ bool validatePass(unsigned int seed, char* password)
 {
     //username = josh
     //password = 8<%B&DH>
-    //+&na4j[)
+    //jason -> +&na4j[)
     int set_length = (int)(strlen(VALID_CHARS_EXTENDED) - 1);
 
     srand(seed);
