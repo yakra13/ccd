@@ -6,37 +6,12 @@
 
 
 ### Answers
+> Paraphrased from:
 https://confluence.90cos.cdl.af.mil/display/SG/%28U%29+Cyberspace+Capability+Development+Operations+and+Procedures
-**__**
-> ---Warfighting Capability Development Process---
-Concept Refinement:
 
-    New requirement (CERF)
-    Major modification
-    Check Cyber Capability Registry (CCR)
-    Enter in RMS
+> Development of cyber capabilities happens in three distinct phases.
+Phase I is the Engagement, Prioritization and Tasking phase where community engagement with mission partners identifies a potential need. 
 
-Technology Development:
+Phase II is the Agile Scrum Development phase which begins when the DevCrew begins working on a new product from the squadron product backlog. The PO is responsible for Phase II and Phase III of the product.
 
-    R & D
-    Assess Technology Readiness Level (TRL)
-    Initial CCR entry
-    Capability Champion
-
-Capability Development and Demonstration:
-
-    Cape Development Milestone
-    Design Readiness Milestone
-    Developmental Test and Eval (DT&E)
-
-Production and Deployment:
-
-    Initial Operational Capability
-    Acceptance Test
-    Operational Test and Eval (OT&E)
-
-Operations and Support:
-
-    Full Ops Capability
-    Status of Resources and Training (SORTS)
-    Develop TTPs
+Phase III is the Product Closeout phase which begins when the PO and the TC agree that the product has met the needs of the customer.
