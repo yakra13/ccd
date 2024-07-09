@@ -1,0 +1,10 @@
+'invalid pass' does not match
+'InValId PasS' does not match
+'InVal1d Pas5' does not match
+'iNV@l1d' does not match
+'V@l1dP@s5' does match
+	lower case: s
+	upper case: P
+	digit: 5
+	special character: @
+	full match: V@l1dP@s5

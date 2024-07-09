@@ -263,6 +263,12 @@
   </tr>
   <tr>
     <td>[14.2](!84)</td>
+    <td>Matching<br>Use of capture groups</td>
+    <td>src</td>
+    <td>[regex.py](/src/14.3/regex.py)<br>[output.txt](/src/14.3/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[14.3](!85)</td>
     <td>Use of capture groups<br>Matching</td>
     <td>src</td>
     <td>[regex.c](/src/14.2/regex.c)<br>[output.txt](/src/14.2/output.txt)</td>
