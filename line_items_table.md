@@ -37,6 +37,12 @@
     <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[4.1](!17)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-1-answers.md](/docs/4-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[4.3](!19)</td>
     <td>N/A</td>
     <td>docs</td>
