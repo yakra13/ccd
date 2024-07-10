@@ -37,6 +37,12 @@
     <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
   </tr>
   <tr>
+    <td>[4.1](!17)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-1-answers.md](/docs/4-1-answers.md)</td>
+  </tr>
+  <tr>
     <td>[4.3](!19)</td>
     <td>N/A</td>
     <td>docs</td>
@@ -260,6 +266,12 @@
     <td>N/A</td>
     <td>src</td>
     <td>[fixed_size.py](/src/13.3/fixed_size.py)<br>[output.txt](/src/13.3/output.txt)</td>
+ </tr>
+  <tr>
+    <td>[13.4](!81)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[variable_size.py](/src/13.4/variable_size.py)<br>[output.txt](/src/13.4/output.txt)</td>
   </tr>
   <tr>
     <td>[14.2](!84)</td>
@@ -278,6 +290,12 @@
     <td>N/A</td>
     <td>docs</td>
     <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[17.3](!102)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[17-3-answers.md](/docs/17-3-answers.md)</td>
   </tr>
   <tr>
     <td>[18.4](!76)</td>
