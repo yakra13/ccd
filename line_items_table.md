@@ -310,7 +310,13 @@
     <td>[17-3-answers.md](/docs/17-3-answers.md)</td>
   </tr>
   <tr>
-    <td>[18.4](!76)</td>
+    <td>[18.3](!105)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[18-3-answers.md](/docs/18-3-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[18.4](!106)</td>
     <td>N/A</td>
     <td>src</td>
     <td>[bitmap.h](/src/18.4/bitmap.h)<br>[cross_compile.c](/src/18.4/cross_compile.c)<br>[Makefile](/src/18.4/Makefile)<br>[example.bmp](/src/18.4/example.bmp)</td>
