@@ -1,5 +1,5 @@
-"""13.4 Demonstrate the ability to serialize and de-serialize variable
-sized data structures between systems of differing endianness
+"""13.3 Demonstrate the ability to serialize fixed size multi-byte
+types between systems of differing endianness
 
 Objectives
 - N/A
