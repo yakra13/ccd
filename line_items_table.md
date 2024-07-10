@@ -262,6 +262,12 @@
     <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
   </tr>
   <tr>
+    <td>[13.3](!80)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[fixed_size.py](/src/13.3/fixed_size.py)<br>[output.txt](/src/13.3/output.txt)</td>
+ </tr>
+  <tr>
     <td>[13.4](!81)</td>
     <td>N/A</td>
     <td>src</td>
