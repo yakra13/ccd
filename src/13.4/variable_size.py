@@ -6,11 +6,12 @@ Objectives
 """
 import struct
 import time
+from datetime import datetime
 from enum import Enum, auto
-from typing import Any, Final, Iterator
+from typing import Any, Final
 
-BUFFER_MIN: Final[int] = 4
 UINT16_MAX: Final[int] = 65535
+
 class ByteEnum(Enum):
     """Base enum class to use when assigning byte values."""
     @staticmethod
@@ -27,7 +28,6 @@ class Singleton(object):
 
 class MessageType(ByteEnum):
     """Enum of valid message types to handle. Start 0x80"""
-    # Client -> Server
     REQ_CREATE_USER: Final[bytes]    = b'\x80'
     REQ_DISCONNECT: Final[bytes]     = auto()
     REQ_LOGIN: Final[bytes]          = auto()
@@ -41,45 +41,48 @@ class Message():
     SIZE_FLD_LEN: Final[int] = 2 # Number of bytes in uint16
     TIME_FLD_LEN: Final[int] = 8 # Number of bytes in double
     ID_FLD_LEN: Final[int]   = 2 # Number of bytes in uint16
+
     HEADER_LEN: Final[int]   = TYPE_FLD_LEN + SIZE_FLD_LEN + TIME_FLD_LEN + ID_FLD_LEN
 
     def __init__(self,
                  message_type: MessageType,
-                 length: int,
+                 timestamp: float,
                  message_id: int,
-                 fields: list[str]) -> None:
+                 fields: list[str],
+                 length: int = None) -> None:
 
-        self.message_type: MessageType  = message_type
-        self._message_length: int        = length
-        self.message_id: int            = message_id
-        self.timestamp: float   = time.time()
-        self._fields: list[str] = fields
+        self.message_type: MessageType = message_type
+        self.message_id: int           = message_id
+        self.timestamp: float          = timestamp
+        self.fields: list[str]         = fields
 
-    def get_total_length(self) -> int:
+        # When creating a Message directly leave the length None to
+        # let the Message calculate its own size
+        self.message_length: int = 0
+        if length is None:
+            self.message_length = self._get_total_length()
+        else:
+            self.message_length = length
+
+    def __str__(self) -> str:
+        field_strings: str = ''
+        for fs in self.fields:
+            field_strings += f'\t{fs}\n'
+
+        return f'Type: {self.message_type}\n' \
+               f'Size: {self.message_length}\n' \
+               f'Time: {datetime.fromtimestamp(self.timestamp)}\n'\
+               f'ID: {self.message_id}\n' \
+               f'Fields:\n{field_strings}'
+
+    def _get_total_length(self) -> int:
         """Return the total size of the message in bytes."""
         fields_length: int = 0
-        for f in self._fields:
+        for str_field in self.fields:
             # Count the null terminator
-            fields_length += len(f) + 1
+            fields_length += len(str_field) + 1
 
         return self.HEADER_LEN + fields_length
-
-    def get_next_field(self) -> Iterator[str]:
-        """Consumes the next field string.
-        
-        Calls to this function should be wrapped in try except block.
-        
-        Raises:
-            IndexError: When iteration continues beyond the total fields
-        
-        Returns:
-            Each field string.
-        """
-        for f in self._fields:
-            try:
-                yield f
-            except StopIteration as exc:
-                raise IndexError(self.message_type, 'Not enough fields in message.') from exc
 
 class MessageBuilder(Singleton):
     """Network message builder."""
@@ -106,11 +109,7 @@ class MessageBuilder(Singleton):
         Returns:
             Formatted bytes.
         """
-        total_length: int = message.get_total_length()
-
-        # Pad the message to a multiple of BUFFER_MIN
-        padding = BUFFER_MIN - (total_length % BUFFER_MIN)
-        total_length += padding
+        total_length: int = message.message_length
 
         # Max byte count for a message 65535
         if total_length > UINT16_MAX:
@@ -121,19 +120,94 @@ class MessageBuilder(Singleton):
         b.append(cls.as_bytes(message.message_type))
         b.extend(total_length.to_bytes(Message.SIZE_FLD_LEN, byteorder='big', signed=False))
         b.extend(struct.pack('d', message.timestamp))
-        b.extend(cls._message_counter.to_bytes(Message.ID_FLD_LEN, byteorder='big', signed=False))
+        b.extend(message.message_id.to_bytes(Message.ID_FLD_LEN, byteorder='big', signed=False))
 
         # Increment message counter and mask to a uint16
         cls._message_counter = (cls._message_counter + 1) & UINT16_MAX
 
-        # Append the data with null terminators
-        for f in message.get_next_field():
-            b.extend(arg.encode('utf-8'))
+        # Process string fields
+        for f in message.fields:
+            b.extend(f.encode('utf-8'))
+            # Append null terminator
             b.append(int.from_bytes(b'\x00', 'big'))
-        # Add the padding
-        for _ in range(0, padding):
-            b.append(int.from_bytes(b'\x00', 'big'))
-        print('returning bytes from build message')
-        print(b.hex())
-        print(bytes(b).hex())
+
         return bytes(b)
+
+    @classmethod
+    def deserialize_message(cls, data_bytes: bytes) -> Message:
+        """Deserialize message bytes.
+
+        Args:
+            data: The bytes to deserialize.
+
+        Returns:
+            Message object.
+        """
+        # Parse the message type
+        message_type: MessageType = MessageType(data_bytes[:Message.TYPE_FLD_LEN])
+        # Remove the message id bytes
+        data_bytes = data_bytes[Message.TYPE_FLD_LEN:]
+        # Parse the message length
+        message_len = data_bytes[:Message.SIZE_FLD_LEN]
+        message_len = int.from_bytes(message_len, 'big')
+        # Remove the message length bytes
+        data_bytes = data_bytes[Message.SIZE_FLD_LEN:]
+        #Parse the time sent bytes
+        message_timestamp = data_bytes[:Message.TIME_FLD_LEN]
+        message_timestamp = struct.unpack('d', message_timestamp)[0]
+        # Remove the time sent bytes
+        data_bytes = data_bytes[Message.TIME_FLD_LEN:]
+        # Parse the id bytes
+        message_id = data_bytes[:Message.ID_FLD_LEN]
+        # Remove the id bytes
+        data_bytes = data_bytes[Message.ID_FLD_LEN:]
+        # Store the parsed strings
+        message_fields: list[str] = []
+
+        # Get how many bytes SHOULD be remaining based on the message length field
+        bytes_left = message_len - Message.HEADER_LEN
+        # Decode the bytes into strings separated by null bytes
+        string: bytearray = bytearray()
+
+        for _, b in enumerate(data_bytes):
+            bytes_left -= 1
+            if b == 0x00:
+                if len(string) > 0:
+                    message_fields.append(string.decode('utf-8'))
+                    string.clear()
+            else:
+                string.append(b)
+
+        return Message(message_type,
+                        message_timestamp,
+                        message_id,
+                        message_fields,
+                        message_len)
+
+
+if __name__ == '__main__':
+    # String fields to populate the message
+    # The number and length of fields is variable
+    # There is an upper limit of 65535 bytes per message to simulate restricted
+    # network message size for efficiency/buffer overflow protection
+    strings: list[str] = [
+        'Username',
+        'Password'
+    ]
+
+    # Create the message object
+    serialize_message: Message = Message(MessageType.REQ_CREATE_USER,
+                                    time.time(),
+                                    0xABCD,
+                                    strings)
+    print(serialize_message)
+
+    # Serialize the message into bytes
+    data: bytes = MessageBuilder.serialize_message(serialize_message)
+
+    print(f'Serialized bytes:\n {data.hex(" ")}\n')
+
+    # Deserialize the bytes into a message object
+    deserialize_msg: Message = MessageBuilder.deserialize_message(data)
+
+    print(deserialize_msg)
