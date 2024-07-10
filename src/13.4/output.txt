@@ -1,0 +1,19 @@
+Type: MessageType.REQ_CREATE_USER
+Size: 31
+Time: 2024-07-09 21:39:43.641613
+ID: 43981
+Fields:
+	Username
+	Password
+
+Serialized bytes:
+ 80 00 1f 2e 10 e9 1b 7d a3 d9 41 ab cd 55 73 65 72 6e 61 6d 65 00 50 61 73 73 77 6f 72 64 00
+
+Type: MessageType.REQ_CREATE_USER
+Size: 31
+Time: 2024-07-09 21:39:43.641613
+ID: b'\xab\xcd'
+Fields:
+	Username
+	Password
+

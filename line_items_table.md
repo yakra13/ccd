@@ -262,6 +262,12 @@
     <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
   </tr>
   <tr>
+    <td>[13.4](!81)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[variable_size.py](/src/13.4/variable_size.py)<br>[output.txt](/src/13.4/output.txt)</td>
+  </tr>
+  <tr>
     <td>[14.2](!84)</td>
     <td>Matching<br>Use of capture groups</td>
     <td>src</td>
