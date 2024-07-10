@@ -15,6 +15,12 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[1.7](!9)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[1-7-answers.md](/docs/1-7-answers.md)</td>
+  </tr>
+  <tr>
     <td>[2.2](!11)</td>
     <td>N/A (CPT Support Element, CPT Mission Element)</td>
     <td>docs</td>
