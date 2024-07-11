@@ -2,6 +2,7 @@
 *.ilk
 *.obj
 *.pdb
+*.so
 *.o
 *.out
 __ignore__
