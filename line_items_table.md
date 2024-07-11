@@ -256,6 +256,12 @@
     <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
   </tr>
   <tr>
+    <td>[13.2](!79)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[partial_read_write.py](/src/13.3/partial_read_write.py)<br>[output.txt](/src/13.2/output.txt)</td>
+  </tr>
+  <tr>
     <td>[14.2](!84)</td>
     <td>Matching<br>Use of capture groups</td>
     <td>src</td>
