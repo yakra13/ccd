@@ -15,6 +15,12 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[1.7](!9)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[1-7-answers.md](/docs/1-7-answers.md)</td>
+  </tr>
+  <tr>
     <td>[2.2](!11)</td>
     <td>N/A (CPT Support Element, CPT Mission Element)</td>
     <td>docs</td>
@@ -35,6 +41,18 @@
     <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
     <td>docs</td>
     <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[4.1](!17)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-1-answers.md](/docs/4-1-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[4.2](!18)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-2-answers.md](/docs/4-2-answers.md)</td>
   </tr>
   <tr>
     <td>[4.3](!19)</td>
@@ -218,6 +236,12 @@
     <td>[11-1-answers.md](/docs/11-1-answers.md)</td>
   </tr>
   <tr>
+    <td>[11.2](!67)</td>
+    <td>Formatting string vulnerabilities<br>Safe buffer size allocation<br>Input sanitization<br>Input validation<br>Establish a secure communications channel using an SSL library<br>Securely zeroing-out memory (compiler optimizations)</td>
+    <td>src</td>
+    <td>[secure_code.c](/src/11.2/secure_code.c)<br>[ssl_example.py](/src/11.2/ssl_example.py)</td>
+  </tr>
+  <tr>
     <td>[12.1](!68)</td>
     <td>Transmission Control Protocol (TCP) / User Datagram Protocol (UDP)<br>Open Systems Interconnect (OSI) model<br>POSIX API/BSD sockets<br>Purpose and use of sockets<br>Request For Comments (RFCs)<br>Purpose of subnetting</td>
     <td>docs</td>
@@ -262,6 +286,18 @@
     <td>[partial_read_write.py](/src/13.3/partial_read_write.py)<br>[output.txt](/src/13.2/output.txt)</td>
   </tr>
   <tr>
+    <td>[13.3](!80)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[fixed_size.py](/src/13.3/fixed_size.py)<br>[output.txt](/src/13.3/output.txt)</td>
+ </tr>
+  <tr>
+    <td>[13.4](!81)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[variable_size.py](/src/13.4/variable_size.py)<br>[output.txt](/src/13.4/output.txt)</td>
+  </tr>
+  <tr>
     <td>[14.2](!84)</td>
     <td>Matching<br>Use of capture groups</td>
     <td>src</td>
@@ -280,7 +316,19 @@
     <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
   </tr>
   <tr>
-    <td>[18.4](!76)</td>
+    <td>[17.3](!102)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[17-3-answers.md](/docs/17-3-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[18.3](!105)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[18-3-answers.md](/docs/18-3-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[18.4](!106)</td>
     <td>N/A</td>
     <td>src</td>
     <td>[bitmap.h](/src/18.4/bitmap.h)<br>[cross_compile.c](/src/18.4/cross_compile.c)<br>[Makefile](/src/18.4/Makefile)<br>[example.bmp](/src/18.4/example.bmp)</td>
