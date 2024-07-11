@@ -15,6 +15,12 @@
     <td>[1-5-answers.md](/docs/1-5-answers.md)</td>
   </tr>
   <tr>
+    <td>[1.7](!9)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[1-7-answers.md](/docs/1-7-answers.md)</td>
+  </tr>
+  <tr>
     <td>[2.2](!11)</td>
     <td>N/A (CPT Support Element, CPT Mission Element)</td>
     <td>docs</td>
@@ -35,6 +41,24 @@
     <td>Remote Operator (ION, RO)<br>Mission Commander (MC)<br>Exploitation Analyst (EA)<br>Digital Network Exploitation Analyst (DNEA) and Target Digital Networking Analyst (TDNA)<br>Operational Target Development Analyst (OTDA), Targeteer, and Fire Support Planner<br>Cyber Operations Planner<br>Team Lead and Deputy Team Lead<br>Language Analyst (LA)<br>Target Analyst Reporter (TAR)</td>
     <td>docs</td>
     <td>[3-2-answers.md](/docs/3-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[4.1](!17)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-1-answers.md](/docs/4-1-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[4.2](!18)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-2-answers.md](/docs/4-2-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[4.3](!19)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[4-3-answers.md](/docs/4-3-answers.md)</td>
   </tr>
   <tr>
     <td>[6.8](!29)</td>
@@ -152,6 +176,12 @@
     <td>[binary_search_tree.py](/src/8.3/binary_search_tree.py)<br>[output.txt](/src/8.3/output.txt)</td>
   </tr>
   <tr>
+    <td>[8.4](!55)</td>
+    <td>Creating a hash table with n number of items<br>Navigating through a hash table to find the nth item<br>Finding an item in a hash table<br>Removing selected items from a hash table<br>Inserting an item into a hash table <br>Implement functionality to mitigate hash collisions within the hash table<br>Removing all items from the hash table</td>
+    <td>src</td>
+    <td>[run.py](/src/8.4/run.py)<br>[hash_table.py](/src/8.4/hash_table.py)<br>[output.txt](/src/8.4/output.txt)</td>
+  </tr>
+  <tr>
     <td>[8.6](!57)</td>
     <td>Defining the underlying structures required for priority queues (cannot be fixed sized)<br>Assigning a priority to each element<br>Inserting an element into the priority queue<br>Removing the element with the highest priority from the priority queue<br>Destroying a priority queue<br>Define possible applications of a priority queue</td>
     <td>src</td>
@@ -192,6 +222,12 @@
     <td>thread safe<br>thread id<br>Locking (mutex, semaphore, etc)<br>Threading (thread vs pthread)<br>fork<br>join<br>create<br>exit<br>detach<br>self<br>Race conditions<br>conditional variables<br>Deadlocks<br>atomics<br>Scheduling algorithms, i.e ., round robin, shortest job first, priority scheduling, etc.</td>
     <td>docs</td>
     <td>[10-4-answers.md](/docs/10-4-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[10.5](!65)</td>
+    <td>Threads<br>Locks<br>Condition variables<br>Atomics<br>Thread Pool (with graceful shutdown without memory leaks)</td>
+    <td>src</td>
+    <td>[concurrency.c](/src/10.5/concurrency.c)<br>[threadpool.h](/src/10.5/threadpool.h)<br>[threadpool.c](/src/10.5/threadpool.c)<br>[output.txt](/src/10.5/output.txt)<br>[Makefile](/src/10.5/Makefile)</td>
   </tr>
   <tr>
     <td>[11.1](!66)</td>
@@ -236,6 +272,60 @@
     <td>N/A</td>
     <td>src</td>
     <td>[common.h](/src/12.7/common.h)<br>[client.c](/src/12.7/client.c)<br>[networking.c](/src/12.7/networking.c)</td>
+  </tr>
+  <tr>
+    <td>[12.10](!77)</td>
+    <td>poll<br>select</td>
+    <td>src</td>
+    <td>[poll.c](/src/12.10/poll.c)<br>[select.c](/src/12.10/select.c)<br>[output.txt](/src/12.10/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[13.3](!80)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[fixed_size.py](/src/13.3/fixed_size.py)<br>[output.txt](/src/13.3/output.txt)</td>
+ </tr>
+  <tr>
+    <td>[13.4](!81)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[variable_size.py](/src/13.4/variable_size.py)<br>[output.txt](/src/13.4/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[14.2](!84)</td>
+    <td>Matching<br>Use of capture groups</td>
+    <td>src</td>
+    <td>[regex.py](/src/14.3/regex.py)<br>[output.txt](/src/14.3/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[14.3](!85)</td>
+    <td>Use of capture groups<br>Matching</td>
+    <td>src</td>
+    <td>[regex.c](/src/14.2/regex.c)<br>[output.txt](/src/14.2/output.txt)</td>
+  </tr>
+  <tr>
+    <td>[15.8](!93)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[17.3](!102)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[17-3-answers.md](/docs/17-3-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[18.3](!105)</td>
+    <td>N/A</td>
+    <td>docs</td>
+    <td>[18-3-answers.md](/docs/18-3-answers.md)</td>
+  </tr>
+  <tr>
+    <td>[18.4](!106)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[bitmap.h](/src/18.4/bitmap.h)<br>[cross_compile.c](/src/18.4/cross_compile.c)<br>[Makefile](/src/18.4/Makefile)<br>[example.bmp](/src/18.4/example.bmp)</td>
   </tr>
   <tr>
     <td>[19.1](!107)</td>

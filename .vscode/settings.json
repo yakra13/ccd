@@ -1,0 +1,18 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "threadpool.h": "c"
+    },
+    "cSpell.words": [
+        "argcount",
+        "DGRAM",
+        "endianness",
+        "gethostname",
+        "maxsplit",
+        "MGMT",
+        "setmotd",
+        "settcp",
+        "setudp"
+    ]
+}

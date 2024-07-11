@@ -2,8 +2,8 @@
 *.ilk
 *.obj
 *.pdb
-*.out
-*.o
 *.so
-__pycache__
+*.o
+*.out
 __ignore__
+__pycache__
