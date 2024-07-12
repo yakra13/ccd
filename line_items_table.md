@@ -322,6 +322,12 @@
     <td>[15-8-answers.md](/docs/15-8-answers.md)</td>
   </tr>
   <tr>
+    <td>[15.9](!94)</td>
+    <td>N/A</td>
+    <td>src</td>
+    <td>[keyfacts.md](/src/15.9/keyfacts.md)<br>[reverse.c](/src/15.9/reverse.c)</td>
+  </tr>
+  <tr>
     <td>[17.3](!102)</td>
     <td>N/A</td>
     <td>docs</td>
