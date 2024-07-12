@@ -86,6 +86,12 @@
     <td>[6-15-answers.md](/docs/6-15-answers.md)</td>
   </tr>
   <tr>
+    <td>[6.16](!39)</td>
+    <td>Execute a program in a debugger to perform general debugging actions<br>Create a program using the compilation and linking process<br>Compile position-independent code using a cross-compiler</td>
+    <td>src</td>
+    <td>[main.c](/src/6.16/main.c)<br>[zmath.c](/src/6.16/zmath.c)<br>[zmath.h](/src/6.16/zmath.h)<br>[Makefile](/src/6.16/Makefile)<br></td>
+  </tr>
+  <tr>
     <td>[6.17](!38)</td>
     <td>N/A (Demonstrate the ability to build a binary from multiple C source files and headers by writing a Makefile using explicit rules)</td>
     <td>src</td>
